@@ -1,4 +1,4 @@
-# Remotion video with Tailwind
+# Remotion video
 
 <p align="center">
   <a href="https://github.com/remotion-dev/logo">
@@ -37,19 +37,42 @@ npm run build
 npm run upgrade
 ```
 
-## Using server-side rendering
+## Captioning
 
-This template uses a [custom Webpack override](https://www.remotion.dev/docs/webpack). If you are using server-side rendering, you need to import the override function from `./src/webpack-override.ts` and pass it to [`bundle()`](https://www.remotion.dev/docs/bundle) (if using SSR) and [`deploySite()`](https://www.remotion.dev/docs/lambda/deploysite) (if using Lambda).
+Replace the `sample-video.mp4` with your video file.
+Caption all the videos in you `public` by running the following command:
+
+```console
+node sub.mjs
+```
+
+Only caption a specific video:
+
+```console
+node sub.mjs <path-to-video-file>
+```
+
+Only caption a specific folder:
+
+```console
+node sub.mjs <path-to-folder>
+```
+
+## Configure Whisper.cpp
+
+Captioning will download Whisper.cpp and the 1.5GB big `medium.en` model. To configure which model is being used, you can configure the variables in `whisper-config.mjs`.
+
+### Non-English languages
+
+To support non-English languages, you need to change the `WHISPER_MODEL` variable in `whisper-config.mjs` to a model that does not have a `.en` sufix.
 
 ## Docs
 
 Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
 
-Get started with Tailwind by reading the ["Utility first" page](https://tailwindcss.com/docs/utility-first)
-
 ## Help
 
-We provide help [on our Discord server](https://remotion.dev/discord).
+We provide help on our [Discord server](https://remotion.dev/discord).
 
 ## Issues
 
@@ -57,4 +80,4 @@ Found an issue with Remotion? [File an issue here](https://github.com/remotion-d
 
 ## License
 
-Note that for some entities a company license is needed. Read [the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).

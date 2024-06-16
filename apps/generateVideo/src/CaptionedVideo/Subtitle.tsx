@@ -12,7 +12,7 @@ const Subtitle: React.FC<{text: string}> = ({text}) => {
 		config: {
 			damping: 200,
 		},
-		durationInFrames: 5,
+		durationInFrames: 3,
 	});
 
 	// Overlay stroked text with normal text to create an effect where the stroke is outside

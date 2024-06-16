@@ -8,7 +8,7 @@ export const NoCaptionFile: React.FC = () => {
 				height: 'auto',
 				width: '100%',
 				backgroundColor: 'white',
-				fontSize: 50,
+				fontSize: 40,
 				padding: 30,
 				top: undefined,
 				fontFamily: 'sans-serif',

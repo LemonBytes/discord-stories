@@ -15,7 +15,7 @@ export const loadFont = async (): Promise<void> => {
 
 	const font = new FontFace(
 		TheBoldFont,
-		`url('${staticFile('fonts/theboldfont.ttf')}') format('truetype')`
+		`url('${staticFile('/assets/fonts/theboldfont.ttf')}') format('truetype')`,
 	);
 
 	await font.load();

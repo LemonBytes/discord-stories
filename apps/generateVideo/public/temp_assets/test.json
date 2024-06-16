@@ -1,0 +1,28 @@
+{
+    "story": [
+        {
+            "voice_name": "en-US-Studio-O",
+            "user_name": "darkrainbow",
+            "speaker_text": "Ugh, guys. Don't even know how to type this, but I have a sinking feeling in my gut about my roommate, Alex, and his girlfriend, Sarah.",
+            "audio_duration_in_frames": 0,
+            "hashed_text": "1",
+            "speaker_type": "title"
+        },
+        {
+            "voice_name": "en-US-Studio-O",
+            "user_name": "darkrainbow",
+            "speaker_text": "They've been together for almost 3 years and have always seemed super solid. We've been living together for a year now, and Sarah's practically family at this point. But lately, Alex's behavior has been setting off all my alarm bells. It started subtly. He's been working late on these supposed projects way more often, nights that used to be their designated date nights. Whenever he is home, he's glued to his phone, screen down, and jumps like a startled cat if it even pings. The other night, I swear I heard him whispering sweet nothings on the phone super late in the living room. I couldn't catch the whole conversation, but it definitely wasn't Sarah's voice on the other end. I feel awful even considering this, but the pieces just don't fit. Alex is a great guy, and Sarah...well, seeing them together makes you believe in happily ever after. But this whole situation is messing with me. Should I confront Alex? Tell Sarah directly? I don't want to be the person who throws a wrench into their relationship, but I also can't just stand by and watch this happen.  Any advice, guys? This is a mess.",
+            "audio_duration_in_frames": 0,
+            "hashed_text": "2",
+            "speaker_type": "main"
+        },
+        {
+            "voice_name": "en-US-Standard-J",
+            "user_name": "moneyHorse23",
+            "speaker_text": "Yikes, that sounds like a tough spot to be in. I agree with confronting Alex first, maybe casually. See if there's a legit explanation for the late nights and secrecy. If things seem off, then you can decide what to do next. But definitely tread carefully. Don't jump to conclusions, you know?",
+            "audio_duration_in_frames": 0,
+            "hashed_text": "3",
+            "speaker_type": "sub_text"
+        }
+    ]
+}

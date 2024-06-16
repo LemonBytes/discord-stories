@@ -12,12 +12,12 @@ export const Word: React.FC<{
 	stroke: boolean;
 }> = ({enterProgress, text, stroke}) => {
 	const {width} = useVideoConfig();
-	const desiredFontSize = 120;
+	const desiredFontSize = 80;
 
 	const fittedText = fitText({
 		fontFamily,
 		text,
-		withinWidth: width * 0.8,
+		withinWidth: width * 0.9,
 	});
 
 	const fontSize = Math.min(desiredFontSize, fittedText.fontSize);
@@ -27,9 +27,9 @@ export const Word: React.FC<{
 			style={{
 				justifyContent: 'center',
 				alignItems: 'center',
-				top: undefined,
-				bottom: 400,
-				height: 150,
+				top: '40%',
+				bottom: undefined,
+				height: 250,
 			}}
 		>
 			<div
@@ -38,7 +38,7 @@ export const Word: React.FC<{
 					color: 'white',
 					WebkitTextStroke: stroke ? '20px black' : undefined,
 					transform: makeTransform([
-						scale(interpolate(enterProgress, [0, 1], [0.8, 1])),
+						scale(interpolate(enterProgress, [0, 1], [0.7, 1])),
 						translateY(interpolate(enterProgress, [0, 1], [50, 0])),
 					]),
 					fontFamily,

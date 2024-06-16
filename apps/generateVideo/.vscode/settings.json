@@ -1,6 +1,5 @@
 {
 	"editor.tabSize": 2,
 	"typescript.tsdk": "node_modules/typescript/lib",
-	"typescript.enablePromptUseWorkspaceTsdk": true,
-	"css.lint.unknownAtRules": "ignore"
+	"typescript.enablePromptUseWorkspaceTsdk": true
 }
