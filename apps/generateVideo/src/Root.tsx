@@ -6,16 +6,16 @@ import {
 	calculateCaptionedVideoMetadata,
 } from './CaptionedVideo';
 import './style.css';
-import {ISpeaker, MyComposition, Story} from './Composition';
+import {MyComposition, Story, StoryFragment} from './Composition';
 import axios from 'axios';
-import {SpeakerMapper} from './SpeakerMapper';
+import {StoryMapper} from './StoryMapper';
 
 // Each <Composition> is an entry in the sidebar!
 
-const calculateVideoFrames = (speakers: ISpeaker[] | null) => {
+const calculateVideoFrames = (fragments: StoryFragment[] | null) => {
 	let maxDuration = 0;
-	if (speakers) {
-		for (const speaker of speakers) {
+	if (fragments) {
+		for (const speaker of fragments) {
 			maxDuration += speaker.audioDurationInFrames;
 		}
 	}
@@ -30,9 +30,9 @@ export const RemotionRoot: React.FC = () => {
 			const response = await axios.get(
 				staticFile('/temp_assets/story_fragments.json'),
 			);
-			const speakerMapper = new SpeakerMapper();
-			const parsedStories = speakerMapper.mapSpeakerBulk(response);
-			setStoryData({story: parsedStories});
+			const speakerMapper = new StoryMapper();
+			const parsedStory = speakerMapper.mapStoryResponse(response);
+			setStoryData(parsedStory);
 		};
 		fetchStory();
 	}, []);
@@ -58,8 +58,8 @@ export const RemotionRoot: React.FC = () => {
 			<Composition
 				id="Story"
 				component={MyComposition}
-				durationInFrames={calculateVideoFrames(story.story)}
-				defaultProps={{...story}}
+				durationInFrames={calculateVideoFrames(story.fragments)}
+				defaultProps={story}
 				fps={30}
 				width={1080}
 				height={1920}

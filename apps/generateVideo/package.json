@@ -1,7 +1,7 @@
 {
-	"name": "template-tiktok",
+	"name": "discord-story-tiktok",
 	"version": "1.0.0",
-	"description": "A Remotion template for TikTok-style captions",
+	"description": "Discord fiction video generation",
 	"sideEffects": [
 		"*.css"
 	],

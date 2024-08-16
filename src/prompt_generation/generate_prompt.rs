@@ -35,10 +35,10 @@ pub fn generate_api_prompt() -> Value {
 
 pub fn generate_comments_llm(genre: String) -> std::string::String {
     let topic = get_topic(genre.clone());
-    let context = get_context();
+    //let context = get_context();
     let question = format!(
-        "Generate a {} question that explores the issue of: {} in the context of: {}. Make sure the question is provocative and encourages deep discussion. Add atleast 6 Comments",
-        genre, topic, context
+        "Generate a {} question that starts a engaging conversation about: {}. Make sure the question is provocative and encourages deep discussion. Add atleast 6 Comments",
+        genre, topic
     );
     println!("{:?}", question);
     question
