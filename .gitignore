@@ -26,3 +26,5 @@ Cargo.lock
 **/*.mp3
 
 **/*.mp4
+
+**/*.wav 
