@@ -1,17 +1,18 @@
 import {useCallback, useEffect, useState} from 'react';
 import {
 	AbsoluteFill,
-	CalculateMetadataFunction,
 	cancelRender,
 	continueRender,
 	delayRender,
 	getStaticFiles,
 	OffthreadVideo,
 	Sequence,
+	staticFile,
+	useCurrentFrame,
 	useVideoConfig,
 	watchStaticFile,
 } from 'remotion';
-import {z} from 'zod';
+
 import Subtitle from './Subtitle';
 import {getVideoMetadata} from '@remotion/media-utils';
 import {loadFont} from '../load-font';
@@ -22,15 +23,10 @@ export type SubtitleProp = {
 	text: string;
 };
 
-export const captionedVideoSchema = z.object({
-	src: z.string(),
-});
-
-export const calculateCaptionedVideoMetadata: CalculateMetadataFunction<
-	z.infer<typeof captionedVideoSchema>
-> = async ({props}) => {
+export const calculateCaptionedVideoMetadata = async () => {
 	const fps = 30;
-	const metadata = await getVideoMetadata(props.src);
+	const src = staticFile('/temp_assets/temp/uncaptioned_story.mp4');
+	const metadata = await getVideoMetadata(src);
 
 	return {
 		fps,
@@ -46,12 +42,32 @@ const getFileExists = (file: string) => {
 	return Boolean(fileExists);
 };
 
-export const CaptionedVideo: React.FC<{
+type CaptionedVideoProps = {
 	src: string;
-}> = ({src}) => {
+	story: Story;
+};
+
+const SKIP_FRAMES_FOR_NOTIFICATION = 20;
+
+export const CaptionedVideo: React.FC<CaptionedVideoProps> = ({src, story}) => {
 	const [subtitles, setSubtitles] = useState<SubtitleProp[]>([]);
+	const [showSubtitles, setShowSubtitles] = useState(false);
+
 	const [handle] = useState(() => delayRender());
+	const frame = useCurrentFrame(); // 25
 	const {fps} = useVideoConfig();
+
+	const getIndexOfFragment = (frame: number) => {
+		if (
+			!(
+				frame >= 0 &&
+				frame <=
+					story.story[0].audioDurationInFrames + SKIP_FRAMES_FOR_NOTIFICATION
+			)
+		) {
+			setShowSubtitles(true);
+		}
+	};
 
 	const subtitlesFile = src
 		.replace(/.mp4$/, '.json')
@@ -84,37 +100,57 @@ export const CaptionedVideo: React.FC<{
 	}, [fetchSubtitles, src, subtitlesFile]);
 
 	return (
-		<AbsoluteFill style={{backgroundColor: 'white'}}>
-			<AbsoluteFill>
-				<OffthreadVideo
-					style={{
-						objectFit: 'cover',
-					}}
-					src={src}
-				/>
-			</AbsoluteFill>
-			{subtitles.map((subtitle, index) => {
-				const nextSubtitle = subtitles[index + 1] ?? null;
-				const subtitleStartFrame = subtitle.startInSeconds * fps;
-				const subtitleEndFrame = Math.min(
-					nextSubtitle ? nextSubtitle.startInSeconds * fps : Infinity,
-					subtitleStartFrame + fps,
-				);
-				const durationInFrames = subtitleEndFrame - subtitleStartFrame;
-				if (durationInFrames <= 0) {
-					return null;
-				}
+		<>
+			{showSubtitles ? (
+				<AbsoluteFill style={{backgroundColor: 'transparent'}}>
+					<AbsoluteFill>
+						<OffthreadVideo
+							style={{
+								objectFit: 'cover',
+							}}
+							src={src}
+						/>
+					</AbsoluteFill>
+					{subtitles.map((subtitle, index) => {
+						if (!showSubtitles) {
+							getIndexOfFragment(frame);
+						}
 
-				return (
-					<Sequence
-						from={subtitleStartFrame}
-						durationInFrames={durationInFrames}
-					>
-						<Subtitle key={index} text={subtitle.text} />;
-					</Sequence>
-				);
-			})}
-			{getFileExists(subtitlesFile) ? null : <NoCaptionFile />}
-		</AbsoluteFill>
+						const nextSubtitle = subtitles[index + 1] ?? null;
+						const subtitleStartFrame = subtitle.startInSeconds * fps;
+						const subtitleEndFrame = Math.min(
+							nextSubtitle ? nextSubtitle.startInSeconds * fps : Infinity,
+							subtitleStartFrame + fps,
+						);
+						const durationInFrames = subtitleEndFrame - subtitleStartFrame;
+						if (durationInFrames <= 0) {
+							return null;
+						}
+
+						return (
+							<>
+								<Sequence
+									key={index}
+									from={subtitleStartFrame}
+									durationInFrames={durationInFrames}
+								>
+									<Subtitle key={index} text={subtitle.text} />
+								</Sequence>
+							</>
+						);
+					})}
+					{getFileExists(subtitlesFile) ? null : <NoCaptionFile />}
+				</AbsoluteFill>
+			) : (
+				<AbsoluteFill>
+					<OffthreadVideo
+						style={{
+							objectFit: 'cover',
+						}}
+						src={src}
+					/>
+				</AbsoluteFill>
+			)}
+		</>
 	);
 };

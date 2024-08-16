@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-prop-types */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import {AbsoluteFill, Sequence, staticFile, Audio, Video} from 'remotion';
 import {ChatMessageBanner} from './components/ChatMessageBanner';
@@ -12,12 +13,12 @@ export type ISpeaker = {
 	userName: string;
 };
 
-type Story = {
+export type Story = {
 	story: ISpeaker[];
 };
 
-const calculatingStartingFrame = (
-	speakers: ISpeaker[],
+export const calculatingStartingFrame = (
+	speakers: Story,
 	index: number,
 ): number => {
 	let startingFrame = 0;
@@ -26,30 +27,54 @@ const calculatingStartingFrame = (
 	}
 
 	for (let i = 1; i <= index; i++) {
-		startingFrame += speakers[i - 1].audioDurationInFrames;
+		startingFrame += speakers.story[i - 1].audioDurationInFrames;
 	}
 
 	return startingFrame;
 };
 
-export const MyComposition: React.FC<Story> = ({story}) => {
+// TO DO
+// create general file path
+// dynamic background video
+
+export const MyComposition: React.FC<Story> = (story) => {
+	const SKIP_FRAMES_FOR_NOTIFICATION = 20;
 	return (
 		<>
+			<Audio
+				volume={1}
+				src={staticFile('/assets/sounds/discord-notification.mp3')}
+			/>
+			<Audio
+				loop
+				volume={0.15}
+				src={staticFile(
+					'/assets/background_sounds/default_background_sound.mp3',
+				)}
+			/>
 			<Video
 				muted
-				src={staticFile('/assets/background_videos/scary_background.mp4')}
+				loop
+				startFrom={SKIP_FRAMES_FOR_NOTIFICATION}
+				src={staticFile('/assets/background_videos/crazy_background_video.mp4')}
 				style={{height: 1920, width: 1080}}
 			/>
 
-			{story.map((speaker: ISpeaker, index: number) => {
+			{story.story.map((speaker: ISpeaker, index: number) => {
 				return (
 					<>
 						<Sequence
 							key={speaker.hashedText}
-							durationInFrames={speaker.audioDurationInFrames}
-							from={calculatingStartingFrame(story, index)}
+							durationInFrames={
+								speaker.audioDurationInFrames + SKIP_FRAMES_FOR_NOTIFICATION * 2
+							}
+							from={
+								calculatingStartingFrame(story, index) +
+								SKIP_FRAMES_FOR_NOTIFICATION
+							}
 						>
 							<Audio
+								volume={0.45}
 								src={staticFile(
 									'/temp_assets/story_audio/' + speaker.hashedText + '.mp3',
 								)}
@@ -58,7 +83,10 @@ export const MyComposition: React.FC<Story> = ({story}) => {
 						<AbsoluteFill>
 							{speaker.speakerType === 'title' && (
 								<TitleBanner
-									delay={calculatingStartingFrame(story, index) - 5}
+									delay={
+										calculatingStartingFrame(story, index) +
+										SKIP_FRAMES_FOR_NOTIFICATION
+									}
 									userName={speaker.userName}
 									text={speaker.text}
 									duruation={speaker.audioDurationInFrames}
@@ -68,7 +96,10 @@ export const MyComposition: React.FC<Story> = ({story}) => {
 						<AbsoluteFill>
 							{speaker.speakerType === 'sub_text' && (
 								<ChatMessageBanner
-									delay={calculatingStartingFrame(story, index) - 5}
+									delay={
+										calculatingStartingFrame(story, index) +
+										SKIP_FRAMES_FOR_NOTIFICATION
+									}
 									userName={speaker.userName}
 									text={speaker.text}
 									duruation={speaker.audioDurationInFrames}

@@ -7,10 +7,11 @@
 	],
 	"scripts": {
 		"start": "remotion studio",
-		"build": "remotion render CaptionedVideo",
+		"build:subtitles": "node sub.mjs /public/temp_assets/temp/story.mp4",
+		"build:captions": "remotion render CaptionedVideo",
+		"build:story": "remotion render Story /public/temp_assets/temp/uncaptioned_story.mp4",
 		"upgrade": "remotion upgrade",
-		"test": "eslint src --ext ts,tsx,js,jsx && tsc",
-		"create-subtitles": "node sub.mjs"
+		"test": "eslint src --ext ts,tsx,js,jsx && tsc"
 	},
 	"repository": {},
 	"license": "UNLICENSED",

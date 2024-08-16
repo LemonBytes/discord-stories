@@ -4,40 +4,35 @@ import {Composition, staticFile} from 'remotion';
 import {
 	CaptionedVideo,
 	calculateCaptionedVideoMetadata,
-	captionedVideoSchema,
 } from './CaptionedVideo';
 import './style.css';
-import {MyComposition} from './Composition';
+import {ISpeaker, MyComposition, Story} from './Composition';
 import axios from 'axios';
 import {SpeakerMapper} from './SpeakerMapper';
 
 // Each <Composition> is an entry in the sidebar!
-export interface ISpeaker {
-	hashedText: string;
-	speakerType: 'main' | 'sub_text' | 'sub_voice' | 'title';
-	audioDurationInFrames: number;
-	text: string;
-	userName: string;
-}
 
-const calculateVideoFrames = (speakers: ISpeaker[]) => {
+const calculateVideoFrames = (speakers: ISpeaker[] | null) => {
 	let maxDuration = 0;
-	for (const speaker of speakers) {
-		maxDuration += speaker.audioDurationInFrames;
+	if (speakers) {
+		for (const speaker of speakers) {
+			maxDuration += speaker.audioDurationInFrames;
+		}
 	}
-
 	return Math.floor(maxDuration);
 };
 
 export const RemotionRoot: React.FC = () => {
-	const [story, setStoryData] = useState<ISpeaker[]>();
+	const [story, setStoryData] = useState<Story>();
 
 	useEffect(() => {
 		const fetchStory = async () => {
-			const response = await axios.get(staticFile('/temp_assets/story.json'));
+			const response = await axios.get(
+				staticFile('/temp_assets/story_fragments.json'),
+			);
 			const speakerMapper = new SpeakerMapper();
-			const parsedStories: ISpeaker[] = speakerMapper.mapSpeakerBulk(response);
-			setStoryData(parsedStories);
+			const parsedStories = speakerMapper.mapSpeakerBulk(response);
+			setStoryData({story: parsedStories});
 		};
 		fetchStory();
 	}, []);
@@ -52,19 +47,19 @@ export const RemotionRoot: React.FC = () => {
 				id="CaptionedVideo"
 				component={CaptionedVideo}
 				calculateMetadata={calculateCaptionedVideoMetadata}
-				schema={captionedVideoSchema}
 				width={1080}
 				height={1920}
 				defaultProps={{
-					src: staticFile('/temp_assets/temp/story.mp4'),
+					src: staticFile('/temp_assets/temp/uncaptioned_story.mp4'),
+					story,
 				}}
 			/>
 
 			<Composition
 				id="Story"
 				component={MyComposition}
-				durationInFrames={calculateVideoFrames(story)}
-				defaultProps={{story}}
+				durationInFrames={calculateVideoFrames(story.story)}
+				defaultProps={{...story}}
 				fps={30}
 				width={1080}
 				height={1920}

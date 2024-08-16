@@ -1,0 +1,59 @@
+use super::{
+    comments_prompt::generate_comments_prompt,
+    generate_schema::generate_schema,
+    narrator_prompt::generate_narrator_prompt,
+    story_config::{get_genre, get_story_type},
+};
+use serde_json::Value;
+
+use crate::{
+    prompt_generation::story_config::{
+        get_comment_type, get_context, get_peoples_involved, get_situations, get_topic,
+    },
+    write_duration::StoryType,
+};
+
+pub fn generate_api_prompt() -> Value {
+    let binding = generate_schema();
+    let schema_as_str = binding.to_owned().to_string();
+    let story_type = get_story_type();
+    let genre = get_genre();
+
+    let request_body = match story_type {
+        StoryType::Narrator(story_type) => {
+            generate_narrator_prompt(schema_as_str, genre, story_type)
+        }
+        StoryType::Comments(story_type) => {
+            generate_comments_prompt(schema_as_str, genre, story_type)
+        }
+        StoryType::Chat(_) => todo!(),
+        StoryType::Call(_) => todo!(),
+    };
+
+    request_body
+}
+
+pub fn generate_comments_llm(genre: String) -> std::string::String {
+    let topic = get_topic(genre.clone());
+    let context = get_context();
+    let question = format!(
+        "Generate a {} question that explores the issue of: {} in the context of: {}. Make sure the question is provocative and encourages deep discussion. Add atleast 6 Comments",
+        genre, topic, context
+    );
+    println!("{:?}", question);
+    question
+}
+
+pub fn generate_narrator_to_llm(genre: String) -> std::string::String {
+    let people = get_peoples_involved();
+    let situation = get_situations();
+    let comment_type = get_comment_type();
+
+    let story = format!(
+        "Create a {} story which involves {} this story is about {}. {}. Be creative and captivating in the details of the story",
+        genre, people, situation, comment_type
+    );
+
+    println!("{:?}", story);
+    return story;
+}

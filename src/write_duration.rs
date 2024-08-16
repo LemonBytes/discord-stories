@@ -1,10 +1,13 @@
 use std::{
+    collections::HashMap,
     fs::{self, File},
     io::Write,
 };
 
 use lofty::{config::ParseOptions, file::AudioFile, mpeg::MpegFile};
 use serde::{Deserialize, Serialize};
+
+use crate::prompt_generation::story_config::get_voices_google;
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "snake_case")]
@@ -17,6 +20,39 @@ pub enum SpeakerType {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "snake_case")]
+#[serde(untagged)]
+#[derive(Clone)]
+pub enum Gender {
+    Male(String),
+    Female(String),
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "snake_case")]
+#[serde(untagged)]
+#[derive(Clone)]
+pub enum StoryType {
+    Narrator(String),
+    Chat(String),
+    Call(String),
+    Comments(String),
+}
+
+#[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "snake_case")]
+#[serde(untagged)]
+#[derive(Clone)]
+
+pub enum StoryGenre {
+    Funny(String),
+    Horrific(String),
+    Sad(String),
+    Perverted(String),
+    Crazy(String),
+}
+
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Speaker {
     pub voice_name: String,
     pub user_name: String,
@@ -24,12 +60,15 @@ pub struct Speaker {
     pub audio_duration_in_frames: f32,
     pub hashed_text: String,
     pub speaker_type: SpeakerType,
+    pub gender: Gender,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-
+#[serde(rename_all = "snake_case")]
 pub struct Story {
-    pub story: Vec<Speaker>,
+    pub story_type: StoryType,
+    pub genre: StoryGenre,
+    pub fragments: Vec<Speaker>,
 }
 
 pub fn write_duration(story_path: &str, audio_path: &str) {
@@ -43,7 +82,7 @@ pub fn write_duration(story_path: &str, audio_path: &str) {
 
     let mut story: Story = serde_json::from_reader(&file_read).expect("file should be proper JSON");
 
-    for speaker in &mut story.story {
+    for speaker in &mut story.fragments {
         let mut file_content =
             File::open(audio_path.to_owned() + &speaker.hashed_text + ".mp3").unwrap();
 
@@ -61,4 +100,34 @@ pub fn write_duration(story_path: &str, audio_path: &str) {
 
     let json = serde_json::to_string(&story).expect("Serialization failed");
     let _ = file_write.write(&json.as_bytes());
+}
+
+pub fn write_voices(story_path: &str) {
+    let file_read = fs::File::options()
+        .read(true)
+        .open(story_path)
+        .expect("failed at reading process");
+
+    let mut story: Story = serde_json::from_reader(&file_read).expect("File should be proper JSON");
+
+    // HashMap to track which voice has been assigned to each user_name
+    let mut assigned_voices: HashMap<String, String> = HashMap::new();
+
+    for speaker in &mut story.fragments {
+        if let Some(voice) = assigned_voices.get(&speaker.user_name) {
+            // If the user_name already has an assigned voice, use it
+            speaker.voice_name = voice.clone();
+        } else {
+            // Otherwise, generate a new voice based on the gender
+            let random_voice = get_voices_google(speaker.gender.clone());
+            // Assign the generated voice to the speaker
+            speaker.voice_name = random_voice.clone();
+            // Store the assigned voice in the HashMap
+            assigned_voices.insert(speaker.user_name.clone(), random_voice);
+        }
+    }
+
+    // Optionally, save the modified story back to the file or handle it as needed
+    let file_write = fs::File::create(story_path).expect("Failed at writing process");
+    serde_json::to_writer(file_write, &story).expect("Failed to write JSON");
 }
