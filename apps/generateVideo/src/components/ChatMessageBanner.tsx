@@ -45,11 +45,11 @@ export const ChatMessageBanner: React.FC<IBanner> = ({
 			}}
 			from={delay - 15}
 			durationInFrames={duruation}
-			className="text-6xl text-white text-left bg-zinc-700  border-1 border-zinc-700 w-[80%] rounded-t-[40px] h-fit rounded-b-[40px] pb-10 flex-col bg-opacity-90"
+			className="text-6xl text-white text-left bg-zinc-700  border-1 border-zinc-700 w-[80%] rounded-t-[40px] h-fit rounded-b-[40px] pb-10 flex-col bg-opacity-80"
 		>
 			<ChatMessageText text={text} userName={userName} />
 			<Audio
-				volume={1.1}
+				volume={1}
 				src={staticFile('/assets/sounds/discord-notification.mp3')}
 			/>
 		</Sequence>

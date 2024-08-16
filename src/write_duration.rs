@@ -5,71 +5,8 @@ use std::{
 };
 
 use lofty::{config::ParseOptions, file::AudioFile, mpeg::MpegFile};
-use serde::{Deserialize, Serialize};
 
-use crate::prompt_generation::story_config::get_voices_google;
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "snake_case")]
-#[serde(untagged)]
-pub enum SpeakerType {
-    Title(String),
-    Main(String),
-    SubText(String),
-    SubVoice(String),
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "snake_case")]
-#[serde(untagged)]
-#[derive(Clone)]
-pub enum Gender {
-    Male(String),
-    Female(String),
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "snake_case")]
-#[serde(untagged)]
-#[derive(Clone)]
-pub enum StoryType {
-    Narrator(String),
-    Chat(String),
-    Call(String),
-    Comments(String),
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "snake_case")]
-#[serde(untagged)]
-#[derive(Clone)]
-
-pub enum StoryGenre {
-    Funny(String),
-    Horrific(String),
-    Sad(String),
-    Perverted(String),
-    Crazy(String),
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-pub struct Speaker {
-    pub voice_name: String,
-    pub user_name: String,
-    pub speaker_text: String,
-    pub audio_duration_in_frames: f32,
-    pub hashed_text: String,
-    pub speaker_type: SpeakerType,
-    pub gender: Gender,
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-#[serde(rename_all = "snake_case")]
-pub struct Story {
-    pub story_type: StoryType,
-    pub genre: StoryGenre,
-    pub fragments: Vec<Speaker>,
-}
+use crate::{entities::entities::Story, prompt_generation::story_config::get_voices_google};
 
 pub fn write_duration(story_path: &str, audio_path: &str) {
     const FRAME_RATE: f32 = 30.0;

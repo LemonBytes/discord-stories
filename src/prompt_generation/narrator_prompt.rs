@@ -1,6 +1,4 @@
-use crate::{
-    json, prompt_generation::generate_prompt::generate_narrator_to_llm, write_duration::StoryGenre,
-};
+use crate::{json, prompt_generation::generate_prompt::generate_narrator_to_llm};
 use serde_json::Value;
 
 pub fn generate_narrator_prompt(schema: String, genre: String, story_type: String) -> Value {
@@ -16,7 +14,7 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
                     "audio_duration_in_frames": 0.0,
                     "hashed_text": "1",
                     "speaker_type": "title",
-                    "gender": "male"
+                    "gender": "female"
                 },
                 {
                     "voice_name": "default",
@@ -29,12 +27,12 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
                 },
                 {
                     "voice_name": "default",
-                    "user_name": "moneyHorse23",
+                    "user_name": "darkrainbow",
                     "speaker_text": "That’s a tough call. If you stay silent, things might get worse. But if you speak up, it could destroy everything.",
                     "audio_duration_in_frames": 0.0,
                     "hashed_text": "3",
-                    "speaker_type": "sub_text",
-                    "gender": "male"
+                    "speaker_type": "main",
+                    "gender": "female"
                 },
                 {
                     "voice_name": "default",
@@ -47,12 +45,12 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
                 },
                 {
                     "voice_name": "default",
-                    "user_name": "moneyHorse23",
+                    "user_name": "darkrainbow",
                     "speaker_text": "Have you talked to your cousin directly about this? Maybe she’ll slip up and confirm your suspicions.",
                     "audio_duration_in_frames": 0.0,
                     "hashed_text": "5",
-                    "speaker_type": "sub_text",
-                    "gender": "male"
+                    "speaker_type": "main",
+                    "gender": "female"
                 },
                 {
                     "voice_name": "default",
@@ -65,12 +63,12 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
                 },
                 {
                     "voice_name": "default",
-                    "user_name": "moneyHorse23",
+                    "user_name": "darkrainbow",
                     "speaker_text": "It’s almost like your sister is in denial. Sometimes people choose not to see the truth because it’s too painful.",
                     "audio_duration_in_frames": 0.0,
                     "hashed_text": "7",
-                    "speaker_type": "sub_text",
-                    "gender": "male"
+                    "speaker_type": "main",
+                    "gender": "female"
                 },
                 {
                     "voice_name": "default",
@@ -83,12 +81,12 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
                 },
                 {
                     "voice_name": "default",
-                    "user_name": "moneyHorse23",
+                    "user_name": "darkrainbow",
                     "speaker_text": "This is a no-win situation. Maybe you could gather more evidence before making any moves. At least then you’ll be sure.",
                     "audio_duration_in_frames": 0.0,
                     "hashed_text": "9",
-                    "speaker_type": "sub_text",
-                    "gender": "male"
+                    "speaker_type": "main",
+                    "gender": "female"
                 },
                 {
                     "voice_name": "default",
@@ -101,12 +99,12 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
                 },
                 {
                     "voice_name": "default",
-                    "user_name": "moneyHorse23",
+                    "user_name": "darkrainbow",
                     "speaker_text": "Sometimes the hardest decisions are the ones that haunt us the most. But maybe by doing nothing, you’re letting things spiral out of control.",
                     "audio_duration_in_frames": 0.0,
                     "hashed_text": "11",
-                    "speaker_type": "sub_text",
-                    "gender": "male"
+                    "speaker_type": "main",
+                    "gender": "female"
                 },
                 {
                     "voice_name": "default",
@@ -119,12 +117,12 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
                 },
                 {
                     "voice_name": "default",
-                    "user_name": "moneyHorse23",
+                    "user_name": "darkrainbow",
                     "speaker_text": "Whatever you decide, just know you’re not alone. This is heavy stuff, but you’ve got people who care about you and your sister. Lean on them if you need to.",
                     "audio_duration_in_frames": 0.0,
                     "hashed_text": "13",
-                    "speaker_type": "sub_text",
-                    "gender": "male"
+                    "speaker_type": "main",
+                    "gender": "female"
                 },
                 {
                     "voice_name": "default",
@@ -137,12 +135,12 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
                 },
                 {
                     "voice_name": "default",
-                    "user_name": "moneyHorse23",
+                    "user_name": "darkrainbow",
                     "speaker_text": "Yeah, life’s messy like that. But you’ve got a good head on your shoulders. Whatever you do, trust your instincts.",
                     "audio_duration_in_frames": 0.0,
                     "hashed_text": "15",
-                    "speaker_type": "sub_text",
-                    "gender": "male"
+                    "speaker_type": "main",
+                    "gender": "female"
                 },
                 {
                     "voice_name": "default",
@@ -189,7 +187,7 @@ pub fn generate_narrator_prompt(schema: String, genre: String, story_type: Strin
     let narrator_prompt = json!({
         "system_instruction": {
             "parts": {
-                "text": "You are a first-person narrator and create gripping, dramatic stories that hook readers instantly and make them want to share or comment. The stories should be explicit, emotionally charged, and filled with tension. Include elements that provoke strong reactions, like betrayal, secrets, or unexpected twists. Use rage bait and ask thought-provoking questions to drive engagement. The title of the story must be provocative, intriguing, and slightly controversial. The title should be around 60 characters. Examples include: - 'My Sister’s Husband Is Cheating, But She Refuses to See It.' - 'I Caught My Brother-in-Law Texting My Cousin, Should I Tell My Sister?' - 'My Sister’s Marriage Is a Mess, and It’s Not Even Her Fault.' - 'Can I Stay Silent About My Sister's Cheating Husband?' The title could also be a question to engage the audience, such as: - 'Should I Expose My Sister’s Husband?' - 'Is It My Place to Tell My Sister About Her Husband’s Affair?' - 'Am I Wrong for Not Telling My Sister What I Saw?' The first story should always align with the title, starting with a shocking revelation or an emotionally charged moment. The first-person narrator should always be the main character, and users responding should be of type sub_text. In this JSON schema:".to_owned() +  &schema
+                "text": "You are a first-person narrator, tasked with crafting gripping and dramatic stories that immediately hook readers and compel them to share or comment. These stories must be explicit, emotionally charged, and brimming with tension. Incorporate elements that evoke strong reactions, such as betrayal, deep secrets, or shocking twists. Utilize 'rage bait' and thought-provoking questions to drive high engagement. The story's title should be provocative, intriguing, and slightly controversial, ideally around 60 characters. Titles must capture attention and provoke curiosity, such as: - 'My Sister’s Husband Is Cheating, But She Refuses to See It.' - 'I Caught My Brother-in-Law Texting My Cousin; Should I Tell My Sister?' - 'My Sister’s Marriage Is a Mess, and It’s Not Even Her Fault.' - 'Can I Stay Silent About My Sister's Cheating Husband?' Titles can also be in the form of a question to directly engage the audience, such as: - 'Should I Expose My Sister’s Husband?' - 'Is It My Place to Tell My Sister About Her Husband’s Affair?' - 'Am I Wrong for Not Telling My Sister What I Saw?' The story should always align closely with the title, beginning with a shocking revelation or an intense emotional moment that pulls the reader in. The first-person narrator must be the central character and speaker_type 'main',  JSON schema:".to_owned() + &schema
             }
         },
         "contents": contents.get("contents"),

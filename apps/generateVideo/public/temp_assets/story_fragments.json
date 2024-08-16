@@ -1,69 +1,60 @@
 {
-    "story_type": "comments",
-    "genre": "horrific",
+    "story_type": "narrator",
+    "genre": "crazy",
     "fragments": [
         {
-            "voice_name": "en-US-Casual-K",
-            "user_name": "LostInTheCrowd",
-            "speaker_text": "What’s the most disturbing story you’ve heard about a haunted place? Especially one where someone felt utterly alone despite being surrounded by people...",
-            "audio_duration_in_frames": 259.0,
+            "voice_name": "en-US-Standard-J",
+            "user_name": "darkrainbow",
+            "speaker_text": "Framed! On the Run With the Student I Shouldn't Trust",
+            "audio_duration_in_frames": 129.0,
             "hashed_text": "1",
             "speaker_type": "title",
-            "gender": "male"
+            "gender": "female"
         },
         {
-            "voice_name": "en-US-Casual-K",
-            "user_name": "GhostlyWhisperer",
-            "speaker_text": "I once heard about this abandoned asylum where patients claimed to see shadows of people they knew were dead, watching them, always just out of reach. They were surrounded by other patients, yet felt completely isolated, like they were the only ones who could see the horrifying truth.",
-            "audio_duration_in_frames": 478.0,
+            "voice_name": "en-US-Standard-J",
+            "user_name": "darkrainbow",
+            "speaker_text": "The flickering neon sign outside my motel window cast everything in a sickly green hue, highlighting the cheap wood veneer and threadbare carpet. It was a far cry from the meticulously organized life I led a week ago, back when I was Ms. Eleanor Wright, respected high school English teacher. Now, I was a fugitive, framed for a crime I didn't commit, and my only ally was the last person anyone would expect – Jason Walker, the rebellious, motorcycle-riding student notorious for challenging my every rule.",
+            "audio_duration_in_frames": 930.0,
             "hashed_text": "2",
-            "speaker_type": "sub_text",
+            "speaker_type": "main",
             "gender": "female"
         },
         {
             "voice_name": "en-US-Standard-J",
-            "user_name": "HauntedHistorian",
-            "speaker_text": "There's a story about a lighthouse keeper who started seeing phantom ships approaching during storms. He’d scream for his family to run, but they couldn't see or hear anything. He was deemed insane, driven mad by the isolation, but what if he was truly alone, surrounded by something sinister that no one else could perceive?",
-            "audio_duration_in_frames": 590.0,
+            "user_name": "darkrainbow",
+            "speaker_text": "It all started with the annual school fundraiser. Someone had replaced the prize money with counterfeit bills, a hefty sum that vanished from the locked safe in the principal's office. Fingers pointed at me; after all, I had been the last one to leave that night, a fact corroborated by none other than Jason, who claimed to have seen me leaving the office.",
+            "audio_duration_in_frames": 618.0,
             "hashed_text": "3",
-            "speaker_type": "sub_text",
-            "gender": "male"
+            "speaker_type": "main",
+            "gender": "female"
         },
         {
-            "voice_name": "en-US-Casual-K",
-            "user_name": "ShadowSeeker",
-            "speaker_text": "Imagine being in a crowded room, laughter and chatter all around, but you feel a cold hand clasp yours. You turn, but there's no one there.  That's the kind of story that chills me to the bone – the idea of being alone in a crowd, your reality unraveling while everyone else is oblivious.",
-            "audio_duration_in_frames": 549.0,
+            "voice_name": "en-US-Standard-J",
+            "user_name": "darkrainbow",
+            "speaker_text": "But Jason wasn't a cold-hearted liar. He knew I was innocent. He had seen someone else lurking around that night, a shadowy figure he couldn't quite place. And so began our unlikely alliance. He offered me an escape on his beat-up Harley, the roar of its engine a defiant anthem against the accusations swirling around us.",
+            "audio_duration_in_frames": 622.0,
             "hashed_text": "4",
-            "speaker_type": "sub_text",
+            "speaker_type": "main",
             "gender": "female"
         },
         {
             "voice_name": "en-US-Standard-J",
-            "user_name": "ParanormalPete",
-            "speaker_text": "There are tales of ancient burial grounds where people have felt an overwhelming sense of dread, like they were intruding on something sacred and malevolent. Despite being with friends, they felt an icy hand on their hearts, a voice whispering their name from the empty air.",
-            "audio_duration_in_frames": 480.0,
+            "user_name": "darkrainbow",
+            "speaker_text": "Now, we were on the run, two unlikely allies thrown together by fate.  The evidence, meticulously planted, painted me as a desperate woman who had used her position for financial gain. But Jason, with his street smarts and unwavering loyalty, was determined to clear my name.",
+            "audio_duration_in_frames": 542.0,
             "hashed_text": "5",
-            "speaker_type": "sub_text",
-            "gender": "male"
-        },
-        {
-            "voice_name": "en-US-Casual-K",
-            "user_name": "SpectralVoyager",
-            "speaker_text": "I read about this house where a family claimed to hear voices whispering their darkest secrets, even in the middle of family dinners. They were surrounded by loved ones, yet felt utterly exposed, their privacy invaded by something unseen and insidious. That's true horror.",
-            "audio_duration_in_frames": 512.0,
-            "hashed_text": "6",
-            "speaker_type": "sub_text",
+            "speaker_type": "main",
             "gender": "female"
         },
         {
             "voice_name": "en-US-Standard-J",
-            "user_name": "EchoesInTheDark",
-            "speaker_text": "There's a legend of a mirror in an old theater that reflects a different reality, one where everyone you love is gone, and you're utterly alone. To be surrounded by the joy of a performance, yet see only emptiness reflected back at you... that's the most haunting thing I can imagine.",
-            "audio_duration_in_frames": 505.0,
-            "hashed_text": "7",
-            "speaker_type": "sub_text",
-            "gender": "male"
+            "user_name": "darkrainbow",
+            "speaker_text": "We were an odd pair, the straight-laced teacher and the rebellious student, racing against time, searching for the truth that would set us free. And somewhere along the desolate highways and anonymous motels,  a grudging respect blossomed, fueled by adrenaline and the constant threat hanging over our heads.  Little did I know, this was just the beginning of a treacherous journey, a high-stakes game where one wrong move could cost us our lives.",
+            "audio_duration_in_frames": 762.0,
+            "hashed_text": "6",
+            "speaker_type": "main",
+            "gender": "female"
         }
     ]
 }

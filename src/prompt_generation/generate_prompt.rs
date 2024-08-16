@@ -7,10 +7,8 @@ use super::{
 use serde_json::Value;
 
 use crate::{
-    prompt_generation::story_config::{
-        get_comment_type, get_context, get_peoples_involved, get_situations, get_topic,
-    },
-    write_duration::StoryType,
+    entities::entities::StoryType,
+    prompt_generation::story_config::{get_peoples_involved, get_situations, get_topic},
 };
 
 pub fn generate_api_prompt() -> Value {
@@ -37,7 +35,7 @@ pub fn generate_comments_llm(genre: String) -> std::string::String {
     let topic = get_topic(genre.clone());
     //let context = get_context();
     let question = format!(
-        "Generate a {} question that starts a engaging conversation about: {}. Make sure the question is provocative and encourages deep discussion. Add atleast 6 Comments",
+        "Create a {} question designed to spark an intense and engaging conversation about: {}. The question should be provocative, thought-provoking, and capable of eliciting strong emotional responses. Ensure the question invites deep discussion and controversy. Include at least 4 comments that are rich in narrative detail, emotionally charged, and reveal personal experiences or moral dilemmas. Each comment should add a new perspective or twist to the conversation, enhancing the depth and complexity of the discussion.",
         genre, topic
     );
     println!("{:?}", question);
@@ -47,11 +45,10 @@ pub fn generate_comments_llm(genre: String) -> std::string::String {
 pub fn generate_narrator_to_llm(genre: String) -> std::string::String {
     let people = get_peoples_involved();
     let situation = get_situations();
-    let comment_type = get_comment_type();
 
     let story = format!(
-        "Create a {} story which involves {} this story is about {}. {}. Be creative and captivating in the details of the story",
-        genre, people, situation, comment_type
+        "Craft a {} story that revolves around {}. The narrative should explore {} in a way that is deeply engaging and emotionally resonant. Use vivid descriptions and compelling details.",
+        genre, people, situation
     );
 
     println!("{:?}", story);

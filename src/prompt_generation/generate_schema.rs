@@ -4,7 +4,6 @@ pub fn generate_schema() -> Value {
     let json_prompt_schema = json!({
         "type": "object",
         "properties": {
-            "story": {
                 "type": "object",
                 "properties": {
                     "story_type": { "type": "string" },
@@ -36,8 +35,7 @@ pub fn generate_schema() -> Value {
                 },
                 "required": ["story_type", "genre"]
             }
-        },
-        "required": ["story"]
+
     });
 
     return json_prompt_schema;

@@ -1,5 +1,6 @@
 import React from 'react';
 import {Img, staticFile} from 'remotion';
+import {Delayed} from '../hooks/Delayed';
 
 interface IChatMessageText {
 	text: string;
@@ -10,6 +11,7 @@ export const ChatMessageText: React.FC<IChatMessageText> = ({
 	text,
 	userName,
 }) => {
+	console.log(text.split('').length);
 	return (
 		<div>
 			<div className="flex justify-between p-5 mt-3">
@@ -24,7 +26,20 @@ export const ChatMessageText: React.FC<IChatMessageText> = ({
 				<div className="px-5 text-zinc-400 font-thin">now</div>
 			</div>
 			<p className="px-6 py-2">{userName}</p>
-			<p className="p-6 pr-7 font-light">{text}</p>
+			<div className="p-6 pr-7">
+				{text.split(' ').map((word: string, index: number) => {
+					return (
+						<Delayed waitBeforeShow={index * 200 - index}>
+							<p
+								key={index + word}
+								className="p-1 font-light text-5xl transition-all float-left"
+							>
+								{word}
+							</p>
+						</Delayed>
+					);
+				})}
+			</div>
 		</div>
 	);
 };

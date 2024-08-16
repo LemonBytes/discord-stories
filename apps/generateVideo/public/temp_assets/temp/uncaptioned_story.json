@@ -1,0 +1,556 @@
+{
+  "systeminfo": "AVX = 1 | AVX2 = 1 | AVX512 = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | METAL = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 0 | VSX = 0 | CUDA = 0 | COREML = 0 | OPENVINO = 0",
+  "model": {
+    "type": "medium",
+    "multilingual": false,
+    "vocab": 51864,
+    "audio": {
+      "ctx": 1500,
+      "state": 1024,
+      "head": 16,
+      "layer": 24
+    },
+    "text": {
+      "ctx": 448,
+      "state": 1024,
+      "head": 16,
+      "layer": 24
+    },
+    "mels": 80,
+    "ftype": 1
+  },
+  "params": {
+    "model": "C:\\Users\\miche\\Desktop\\Projekte\\discord-stories\\apps\\generateVideo\\whisper.cpp\\ggml-medium.en.bin",
+    "language": "en",
+    "translate": false
+  },
+  "result": {
+    "language": "en"
+  },
+  "transcription": [
+    {
+      "text": "(beep)",
+      "startInSeconds": 0.22
+    },
+    {
+      "text": "- Have",
+      "startInSeconds": 0.92
+    },
+    {
+      "text": "you ever",
+      "startInSeconds": 1.1
+    },
+    {
+      "text": "felt",
+      "startInSeconds": 1.6
+    },
+    {
+      "text": "like",
+      "startInSeconds": 1.82
+    },
+    {
+      "text": "you were",
+      "startInSeconds": 1.98
+    },
+    {
+      "text": "living",
+      "startInSeconds": 2.36
+    },
+    {
+      "text": "in a simulation",
+      "startInSeconds": 2.52
+    },
+    {
+      "text": "and experienced",
+      "startInSeconds": 3.38
+    },
+    {
+      "text": "a glitch",
+      "startInSeconds": 4.1
+    },
+    {
+      "text": "in the",
+      "startInSeconds": 4.52
+    },
+    {
+      "text": "matrix?",
+      "startInSeconds": 4.86
+    },
+    {
+      "text": "(beep)",
+      "startInSeconds": 6.6
+    },
+    {
+      "text": "- This",
+      "startInSeconds": 6.86
+    },
+    {
+      "text": "one",
+      "startInSeconds": 7.24
+    },
+    {
+      "text": "time, I was",
+      "startInSeconds": 7.58
+    },
+    {
+      "text": "thinking",
+      "startInSeconds": 8.4
+    },
+    {
+      "text": "about a",
+      "startInSeconds": 8.58
+    },
+    {
+      "text": "song",
+      "startInSeconds": 8.88
+    },
+    {
+      "text": "I hadn't",
+      "startInSeconds": 9.06
+    },
+    {
+      "text": "heard",
+      "startInSeconds": 9.42
+    },
+    {
+      "text": "in",
+      "startInSeconds": 9.66
+    },
+    {
+      "text": "years,",
+      "startInSeconds": 9.98
+    },
+    {
+      "text": "and literally",
+      "startInSeconds": 10.72
+    },
+    {
+      "text": "the",
+      "startInSeconds": 11.28
+    },
+    {
+      "text": "next",
+      "startInSeconds": 11.44
+    },
+    {
+      "text": "second,",
+      "startInSeconds": 11.86
+    },
+    {
+      "text": "it started",
+      "startInSeconds": 12.36
+    },
+    {
+      "text": "playing",
+      "startInSeconds": 12.88
+    },
+    {
+      "text": "on the",
+      "startInSeconds": 13.06
+    },
+    {
+      "text": "radio.",
+      "startInSeconds": 13.48
+    },
+    {
+      "text": "It was",
+      "startInSeconds": 14.42
+    },
+    {
+      "text": "so weird,",
+      "startInSeconds": 14.88
+    },
+    {
+      "text": "like my",
+      "startInSeconds": 15.84
+    },
+    {
+      "text": "thoughts",
+      "startInSeconds": 16.26
+    },
+    {
+      "text": "were",
+      "startInSeconds": 16.44
+    },
+    {
+      "text": "controlling",
+      "startInSeconds": 16.92
+    },
+    {
+      "text": "reality.",
+      "startInSeconds": 17.44
+    },
+    {
+      "text": "(beep)",
+      "startInSeconds": 18.66
+    },
+    {
+      "text": "Once,",
+      "startInSeconds": 19.32
+    },
+    {
+      "text": "I ran into",
+      "startInSeconds": 19.8
+    },
+    {
+      "text": "someone",
+      "startInSeconds": 20.44
+    },
+    {
+      "text": "wearing",
+      "startInSeconds": 20.72
+    },
+    {
+      "text": "the",
+      "startInSeconds": 20.92
+    },
+    {
+      "text": "exact",
+      "startInSeconds": 21.2
+    },
+    {
+      "text": "same",
+      "startInSeconds": 21.52
+    },
+    {
+      "text": "outfit",
+      "startInSeconds": 21.78
+    },
+    {
+      "text": "as me,",
+      "startInSeconds": 21.98
+    },
+    {
+      "text": "head",
+      "startInSeconds": 22.66
+    },
+    {
+      "text": "to toe.",
+      "startInSeconds": 22.8
+    },
+    {
+      "text": "We even",
+      "startInSeconds": 24.06
+    },
+    {
+      "text": "had",
+      "startInSeconds": 24.44
+    },
+    {
+      "text": "the",
+      "startInSeconds": 24.66
+    },
+    {
+      "text": "same",
+      "startInSeconds": 24.86
+    },
+    {
+      "text": "weird,",
+      "startInSeconds": 25.46
+    },
+    {
+      "text": "obscure",
+      "startInSeconds": 26.22
+    },
+    {
+      "text": "band",
+      "startInSeconds": 26.54
+    },
+    {
+      "text": "t-shirt.",
+      "startInSeconds": 26.84
+    },
+    {
+      "text": "It was",
+      "startInSeconds": 27.58
+    },
+    {
+      "text": "like",
+      "startInSeconds": 27.8
+    },
+    {
+      "text": "looking",
+      "startInSeconds": 28.1
+    },
+    {
+      "text": "in a mirror.",
+      "startInSeconds": 28.26
+    },
+    {
+      "text": "- Freaky,",
+      "startInSeconds": 29.36
+    },
+    {
+      "text": "right?",
+      "startInSeconds": 30.24
+    },
+    {
+      "text": "(beep)",
+      "startInSeconds": 31.02
+    },
+    {
+      "text": "- I swear",
+      "startInSeconds": 31.42
+    },
+    {
+      "text": "I've",
+      "startInSeconds": 32.12
+    },
+    {
+      "text": "had dreams",
+      "startInSeconds": 32.36
+    },
+    {
+      "text": "that later",
+      "startInSeconds": 33.02
+    },
+    {
+      "text": "came",
+      "startInSeconds": 33.5
+    },
+    {
+      "text": "true",
+      "startInSeconds": 33.84
+    },
+    {
+      "text": "in",
+      "startInSeconds": 34.06
+    },
+    {
+      "text": "real",
+      "startInSeconds": 34.26
+    },
+    {
+      "text": "life.",
+      "startInSeconds": 34.62
+    },
+    {
+      "text": "It's",
+      "startInSeconds": 35.56
+    },
+    {
+      "text": "not",
+      "startInSeconds": 35.84
+    },
+    {
+      "text": "the",
+      "startInSeconds": 36.06
+    },
+    {
+      "text": "exact",
+      "startInSeconds": 36.4
+    },
+    {
+      "text": "same",
+      "startInSeconds": 36.7
+    },
+    {
+      "text": "events,",
+      "startInSeconds": 37.14
+    },
+    {
+      "text": "but the",
+      "startInSeconds": 37.44
+    },
+    {
+      "text": "feeling,",
+      "startInSeconds": 37.92
+    },
+    {
+      "text": "the",
+      "startInSeconds": 38.32
+    },
+    {
+      "text": "people,",
+      "startInSeconds": 38.62
+    },
+    {
+      "text": "the",
+      "startInSeconds": 39
+    },
+    {
+      "text": "places,",
+      "startInSeconds": 39.4
+    },
+    {
+      "text": "it's",
+      "startInSeconds": 40.02
+    },
+    {
+      "text": "like",
+      "startInSeconds": 40.24
+    },
+    {
+      "text": "I've",
+      "startInSeconds": 40.4
+    },
+    {
+      "text": "lived",
+      "startInSeconds": 40.66
+    },
+    {
+      "text": "it before.",
+      "startInSeconds": 40.8
+    },
+    {
+      "text": "Makes",
+      "startInSeconds": 42.24
+    },
+    {
+      "text": "you",
+      "startInSeconds": 42.44
+    },
+    {
+      "text": "question",
+      "startInSeconds": 42.86
+    },
+    {
+      "text": "everything.",
+      "startInSeconds": 43.34
+    },
+    {
+      "text": "(beep)",
+      "startInSeconds": 44.2
+    },
+    {
+      "text": "Years",
+      "startInSeconds": 44.92
+    },
+    {
+      "text": "ago,",
+      "startInSeconds": 45.26
+    },
+    {
+      "text": "I lost",
+      "startInSeconds": 45.62
+    },
+    {
+      "text": "my dog",
+      "startInSeconds": 46.12
+    },
+    {
+      "text": "while traveling",
+      "startInSeconds": 46.6
+    },
+    {
+      "text": "in a",
+      "startInSeconds": 47.24
+    },
+    {
+      "text": "foreign",
+      "startInSeconds": 47.6
+    },
+    {
+      "text": "country.",
+      "startInSeconds": 48.04
+    },
+    {
+      "text": "Months",
+      "startInSeconds": 49.1
+    },
+    {
+      "text": "later,",
+      "startInSeconds": 49.5
+    },
+    {
+      "text": "back",
+      "startInSeconds": 50
+    },
+    {
+      "text": "home,",
+      "startInSeconds": 50.32
+    },
+    {
+      "text": "I saw",
+      "startInSeconds": 50.8
+    },
+    {
+      "text": "a dog",
+      "startInSeconds": 51.18
+    },
+    {
+      "text": "that",
+      "startInSeconds": 51.62
+    },
+    {
+      "text": "looked",
+      "startInSeconds": 51.76
+    },
+    {
+      "text": "exactly",
+      "startInSeconds": 52.24
+    },
+    {
+      "text": "like",
+      "startInSeconds": 52.52
+    },
+    {
+      "text": "him.",
+      "startInSeconds": 52.78
+    },
+    {
+      "text": "Turns",
+      "startInSeconds": 53.74
+    },
+    {
+      "text": "out,",
+      "startInSeconds": 54.1
+    },
+    {
+      "text": "it was",
+      "startInSeconds": 54.34
+    },
+    {
+      "text": "him.",
+      "startInSeconds": 54.78
+    },
+    {
+      "text": "Someone",
+      "startInSeconds": 55.56
+    },
+    {
+      "text": "had found",
+      "startInSeconds": 55.78
+    },
+    {
+      "text": "him and",
+      "startInSeconds": 56.24
+    },
+    {
+      "text": "brought",
+      "startInSeconds": 56.6
+    },
+    {
+      "text": "him back",
+      "startInSeconds": 56.78
+    },
+    {
+      "text": "to my",
+      "startInSeconds": 57.14
+    },
+    {
+      "text": "home",
+      "startInSeconds": 57.46
+    },
+    {
+      "text": "country.",
+      "startInSeconds": 57.88
+    },
+    {
+      "text": "Fate,",
+      "startInSeconds": 59.04
+    },
+    {
+      "text": "destiny,",
+      "startInSeconds": 59.74
+    },
+    {
+      "text": "what",
+      "startInSeconds": 60.3
+    },
+    {
+      "text": "is it?",
+      "startInSeconds": 60.44
+    }
+  ]
+}

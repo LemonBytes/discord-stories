@@ -46,81 +46,79 @@ export const MyComposition: React.FC<Story> = (story) => {
 	console.log(story.storyType);
 	return (
 		<>
-			{story.storyType === 'comments' && (
-				<>
-					<Audio
-						volume={1}
-						src={staticFile(`/assets/sounds/discord-notification.mp3`)}
-					/>
-					<Audio
-						loop
-						volume={0.15}
-						src={staticFile(
-							`/assets/background_sounds/horrific_background_sound.mp3`,
-						)}
-					/>
-					<Video
-						muted
-						loop
-						startFrom={SKIP_FRAMES_FOR_NOTIFICATION}
-						src={staticFile(
-							'/assets/background_videos/crazy_background_video.mp4',
-						)}
-						style={{height: 1920, width: 1080}}
-					/>
+			<>
+				<Audio
+					volume={1}
+					src={staticFile(`/assets/sounds/discord-notification.mp3`)}
+				/>
+				<Audio
+					loop
+					volume={0.15}
+					src={staticFile(
+						`/assets/background_sounds/scary_background_sound.mp3`,
+					)}
+				/>
+				<Video
+					muted
+					loop
+					startFrom={SKIP_FRAMES_FOR_NOTIFICATION}
+					src={staticFile(
+						'/assets/background_videos/particle_2_background_video.mp4',
+					)}
+					style={{height: 1920, width: 1080}}
+				/>
 
-					{story.fragments.map((speaker: StoryFragment, index: number) => {
-						return (
-							<>
-								<Sequence
-									key={speaker.hashedText}
-									durationInFrames={
-										speaker.audioDurationInFrames +
-										SKIP_FRAMES_FOR_NOTIFICATION * 2
-									}
-									from={
-										calculatingStartingFrame(story, index) +
-										SKIP_FRAMES_FOR_NOTIFICATION
-									}
-								>
-									<Audio
-										volume={0.55}
-										src={staticFile(
-											'/temp_assets/story_audio/' + speaker.hashedText + '.mp3',
-										)}
+				{story.fragments.map((speaker: StoryFragment, index: number) => {
+					return (
+						<>
+							<Sequence
+								key={speaker.hashedText}
+								durationInFrames={
+									speaker.audioDurationInFrames +
+									SKIP_FRAMES_FOR_NOTIFICATION * 2
+								}
+								from={
+									calculatingStartingFrame(story, index) +
+									SKIP_FRAMES_FOR_NOTIFICATION
+								}
+							>
+								<Audio
+									volume={0.7}
+									src={staticFile(
+										'/temp_assets/story_audio/' + speaker.hashedText + '.mp3',
+									)}
+								/>
+							</Sequence>
+							<AbsoluteFill>
+								{speaker.speakerType === 'title' && (
+									<TitleBanner
+										delay={
+											calculatingStartingFrame(story, index) +
+											SKIP_FRAMES_FOR_NOTIFICATION
+										}
+										userName={speaker.userName}
+										text={speaker.text}
+										duruation={speaker.audioDurationInFrames}
 									/>
-								</Sequence>
-								<AbsoluteFill>
-									{speaker.speakerType === 'title' && (
-										<TitleBanner
-											delay={
-												calculatingStartingFrame(story, index) +
-												SKIP_FRAMES_FOR_NOTIFICATION
-											}
-											userName={speaker.userName}
-											text={speaker.text}
-											duruation={speaker.audioDurationInFrames}
-										/>
-									)}
-								</AbsoluteFill>
-								<AbsoluteFill>
-									{speaker.speakerType === 'sub_text' && (
-										<ChatMessageBanner
-											delay={
-												calculatingStartingFrame(story, index) +
-												SKIP_FRAMES_FOR_NOTIFICATION
-											}
-											userName={speaker.userName}
-											text={speaker.text}
-											duruation={speaker.audioDurationInFrames}
-										/>
-									)}
-								</AbsoluteFill>
-							</>
-						);
-					})}
-				</>
-			)}
+								)}
+							</AbsoluteFill>
+							<AbsoluteFill>
+								{speaker.speakerType === 'sub_text' && (
+									<ChatMessageBanner
+										delay={
+											calculatingStartingFrame(story, index) +
+											SKIP_FRAMES_FOR_NOTIFICATION
+										}
+										userName={speaker.userName}
+										text={speaker.text}
+										duruation={speaker.audioDurationInFrames}
+									/>
+								)}
+							</AbsoluteFill>
+						</>
+					);
+				})}
+			</>
 		</>
 	);
 };

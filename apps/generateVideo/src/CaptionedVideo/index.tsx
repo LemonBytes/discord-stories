@@ -8,7 +8,6 @@ import {
 	OffthreadVideo,
 	Sequence,
 	staticFile,
-	useCurrentFrame,
 	useVideoConfig,
 	watchStaticFile,
 } from 'remotion';
@@ -17,6 +16,7 @@ import Subtitle from './Subtitle';
 import {getVideoMetadata} from '@remotion/media-utils';
 import {loadFont} from '../load-font';
 import {NoCaptionFile} from './NoCaptionFile';
+import {Story} from '../Composition';
 
 export type SubtitleProp = {
 	startInSeconds: number;
@@ -47,27 +47,11 @@ type CaptionedVideoProps = {
 	story: Story;
 };
 
-const SKIP_FRAMES_FOR_NOTIFICATION = 20;
-
 export const CaptionedVideo: React.FC<CaptionedVideoProps> = ({src, story}) => {
 	const [subtitles, setSubtitles] = useState<SubtitleProp[]>([]);
-	const [showSubtitles, setShowSubtitles] = useState(false);
 
 	const [handle] = useState(() => delayRender());
-	const frame = useCurrentFrame(); // 25
 	const {fps} = useVideoConfig();
-
-	const getIndexOfFragment = (frame: number) => {
-		if (
-			!(
-				frame >= 0 &&
-				frame <=
-					story.story[0].audioDurationInFrames + SKIP_FRAMES_FOR_NOTIFICATION
-			)
-		) {
-			setShowSubtitles(true);
-		}
-	};
 
 	const subtitlesFile = src
 		.replace(/.mp4$/, '.json')
@@ -101,47 +85,7 @@ export const CaptionedVideo: React.FC<CaptionedVideoProps> = ({src, story}) => {
 
 	return (
 		<>
-			{showSubtitles ? (
-				<AbsoluteFill style={{backgroundColor: 'transparent'}}>
-					<AbsoluteFill>
-						<OffthreadVideo
-							style={{
-								objectFit: 'cover',
-							}}
-							src={src}
-						/>
-					</AbsoluteFill>
-					{subtitles.map((subtitle, index) => {
-						if (!showSubtitles) {
-							getIndexOfFragment(frame);
-						}
-
-						const nextSubtitle = subtitles[index + 1] ?? null;
-						const subtitleStartFrame = subtitle.startInSeconds * fps;
-						const subtitleEndFrame = Math.min(
-							nextSubtitle ? nextSubtitle.startInSeconds * fps : Infinity,
-							subtitleStartFrame + fps,
-						);
-						const durationInFrames = subtitleEndFrame - subtitleStartFrame;
-						if (durationInFrames <= 0) {
-							return null;
-						}
-
-						return (
-							<>
-								<Sequence
-									key={index}
-									from={subtitleStartFrame}
-									durationInFrames={durationInFrames}
-								>
-									<Subtitle key={index} text={subtitle.text} />
-								</Sequence>
-							</>
-						);
-					})}
-					{getFileExists(subtitlesFile) ? null : <NoCaptionFile />}
-				</AbsoluteFill>
-			) : (
+			<AbsoluteFill style={{backgroundColor: 'transparent'}}>
 				<AbsoluteFill>
 					<OffthreadVideo
 						style={{
@@ -150,7 +94,38 @@ export const CaptionedVideo: React.FC<CaptionedVideoProps> = ({src, story}) => {
 						src={src}
 					/>
 				</AbsoluteFill>
-			)}
+				{subtitles.map((subtitle, index) => {
+					const titleDurationInFrame = story.fragments[0].audioDurationInFrames;
+
+					const nextSubtitle = subtitles[index + 1] ?? null;
+					const subtitleStartFrame = subtitle.startInSeconds * fps;
+					const subtitleEndFrame = Math.min(
+						nextSubtitle ? nextSubtitle.startInSeconds * fps : Infinity,
+						subtitleStartFrame + fps,
+					);
+					const durationInFrames = subtitleEndFrame - subtitleStartFrame;
+					if (durationInFrames <= 0) {
+						return null;
+					}
+
+					return (
+						<>
+							<Sequence
+								key={index}
+								from={subtitleStartFrame}
+								durationInFrames={durationInFrames}
+							>
+								<>
+									{subtitleStartFrame > titleDurationInFrame && (
+										<Subtitle key={index} text={subtitle.text} />
+									)}
+								</>
+							</Sequence>
+						</>
+					);
+				})}
+				{getFileExists(subtitlesFile) ? null : <NoCaptionFile />}
+			</AbsoluteFill>
 		</>
 	);
 };
