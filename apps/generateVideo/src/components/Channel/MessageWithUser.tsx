@@ -66,7 +66,7 @@ const MessageWithUser: React.FC<IChatMessageText> = ({
 					<div className="max-h-fit">
 						{text.split(' ').map((word: string, index: number) => {
 							return (
-								<Delayed waitBeforeShow={index * 300 - index}>
+								<Delayed waitBeforeShow={index * 200 - index}>
 									<p className="text-gray-100 text-3xl float-left pr-2">
 										{word}
 									</p>

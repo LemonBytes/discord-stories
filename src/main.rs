@@ -90,8 +90,8 @@ async fn main() {
     //######################################################################################
     //################################## GENERATE TEXT
     //######################################################################################
-
-    /*  let project_id = dotenv!("PROJECT_ID");
+    /*
+    let project_id = dotenv!("PROJECT_ID");
     let model_id = dotenv!("MODEL_ID");
 
     let client_gemini = reqwest::Client::new();
@@ -144,7 +144,7 @@ async fn main() {
     // create seperate module
     // add starting_frame and ending_frame to in write_duration
 
-    /* let params = [("key", dotenv!("TTS_API_KEY"))];
+    /*  let params = [("key", dotenv!("TTS_API_KEY"))];
 
     let client = reqwest::Client::new();
     let base_url = Url::parse("https://texttospeech.googleapis.com").unwrap();
@@ -221,7 +221,7 @@ async fn main() {
         .output()
         .expect("error");
 
-    /*  match story.story_type {
+    /*    match story.story_type {
         entities::entities::StoryType::Narrator(_) => {
             Command::new("npx.cmd")
                 .stdout(Stdio::inherit())
@@ -259,7 +259,21 @@ async fn main() {
                 .expect("error");
         }
         entities::entities::StoryType::Comments(_) => {}
-        entities::entities::StoryType::Chat(_) => todo!(),
+        entities::entities::StoryType::Chat(_) => {
+            Command::new("npx.cmd")
+                .stdout(Stdio::inherit())
+                .current_dir(r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo")
+                .args([
+                    "remotion",
+                    "render",
+                    "./src/index.ts",
+                    "Story",
+                    "./public/temp_assets/temp/uncaptioned_story.mp4",
+                    "--concurrency=1",
+                ])
+                .output()
+                .expect("error");
+        }
         entities::entities::StoryType::Call(_) => todo!(),
     } */
 }

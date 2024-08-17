@@ -1,87 +1,96 @@
 {
     "story_type": "chat",
-    "genre": "horrific",
+    "genre": "drama",
     "fragments": [
         {
             "voice_name": "en-US-Studio-O",
-            "user_name": "Insomniac262",
-            "speaker_text": "If you were forced to choose between saving a loved one or ten strangers from certain death, and the choice would remain a secret forever, what would you do?",
-            "audio_duration_in_frames": 297.0,
+            "user_name": "WhispererOfSecrets",
+            "speaker_text": "🤫 Have you ever found a hidden message or code in something unexpected that revealed a heartbreaking truth? 💔  What did you do with the information?",
+            "audio_duration_in_frames": 241.0,
             "hashed_text": "1",
-            "speaker_type": "title",
-            "gender": "male"
+            "speaker_type": "sub_text",
+            "gender": "female"
         },
         {
             "voice_name": "en-US-Studio-O",
-            "user_name": "TornBetweenWorlds",
-            "speaker_text": "This question haunts me. My heart screams 'save my loved one,' but logic whispers about the ten lives at stake. The guilt from either choice would be unbearable.",
-            "audio_duration_in_frames": 253.0,
+            "user_name": "BrokenHeartedHero",
+            "speaker_text": "Okay, this is deep. I once found a coded message in a used book that led me to a collection of letters. Turns out, they were from my grandfather to a woman he was secretly in love with. I never confronted my family, but it made me question everything I thought I knew.  😥",
+            "audio_duration_in_frames": 395.0,
             "hashed_text": "2",
             "speaker_type": "sub_text",
             "gender": "male"
         },
         {
             "voice_name": "en-US-Studio-O",
-            "user_name": "EthicalConundrum",
-            "speaker_text": "Is it ethical to prioritize emotional connection over the greater good? Would saving fewer lives be less of a sacrifice, even if it meant betraying a fundamental human instinct?",
-            "audio_duration_in_frames": 335.0,
+            "user_name": "MysteryMaven",
+            "speaker_text": "Whoa, that’s intense! Did you ever try to find out who the woman was?",
+            "audio_duration_in_frames": 127.0,
             "hashed_text": "3",
             "speaker_type": "sub_text",
-            "gender": "male"
+            "gender": "female"
         },
         {
-            "voice_name": "en-US-Casual-K",
-            "user_name": "HauntedByChoice",
-            "speaker_text": "Years ago, I faced a similar dilemma. A fire trapped my brother and a group of children. I saved my brother. The guilt still consumes me, a constant reminder of the lives I couldn't save.",
-            "audio_duration_in_frames": 344.0,
+            "voice_name": "en-US-Studio-O",
+            "user_name": "CodeBreaker42",
+            "speaker_text": "I did, but it led to a dead end. It’s like she vanished. Part of me wishes I never found the letters. The truth can be a heavy burden.  😔",
+            "audio_duration_in_frames": 229.0,
             "hashed_text": "4",
             "speaker_type": "sub_text",
-            "gender": "female"
+            "gender": "male"
         },
         {
-            "voice_name": "en-US-Casual-K",
-            "user_name": "SilentSuffering",
-            "speaker_text": "The real horror lies in the secret. Living with the knowledge of your choice, the potential for regret and self-hatred, that’s the true punishment.",
-            "audio_duration_in_frames": 253.0,
+            "voice_name": "en-US-Studio-O",
+            "user_name": "SecretKeeper69",
+            "speaker_text": "I feel that. I found a hidden note in my mom’s diary that revealed a family secret I wasn’t prepared for. It broke my heart, but I kept quiet. Some truths are too painful to unearth.  💔",
+            "audio_duration_in_frames": 279.0,
             "hashed_text": "5",
             "speaker_type": "sub_text",
-            "gender": "male"
-        },
-        {
-            "voice_name": "en-US-Studio-O",
-            "user_name": "UncertainFuture",
-            "speaker_text": "The question assumes we have control. What if fate decides? We might believe we're making a choice when, in reality, it's already been made for us.",
-            "audio_duration_in_frames": 261.0,
-            "hashed_text": "6",
-            "speaker_type": "sub_text",
-            "gender": "male"
+            "gender": "female"
         },
         {
             "voice_name": "en-US-Casual-K",
-            "user_name": "HopeInHumanity",
-            "speaker_text": "This assumes the worst in humanity. Maybe, faced with the truth, others would understand the impossible choice you had to make. There's always hope for compassion.",
-            "audio_duration_in_frames": 282.0,
-            "hashed_text": "7",
+            "user_name": "TruthSeeker22",
+            "speaker_text": "This is messing with my head!  🤯 What if we’re meant to uncover these hidden messages? What if they hold the key to something bigger?",
+            "audio_duration_in_frames": 210.0,
+            "hashed_text": "6",
             "speaker_type": "sub_text",
             "gender": "female"
         },
         {
             "voice_name": "en-US-Studio-O",
-            "user_name": "ExistentialDread",
-            "speaker_text": "The scariest part is that there’s no right answer. It's a lose-lose situation, a chilling reminder of our own mortality and the impossible choices life throws our way.",
-            "audio_duration_in_frames": 315.0,
+            "user_name": "LostInTranslation",
+            "speaker_text": "That’s what scares me! I found a cryptic message on a scrap of paper that belonged to my best friend. I’m too scared to ask her about it, but the suspense is killing me.  😬",
+            "audio_duration_in_frames": 245.0,
+            "hashed_text": "7",
+            "speaker_type": "sub_text",
+            "gender": "male"
+        },
+        {
+            "voice_name": "en-US-Casual-K",
+            "user_name": "EncryptedEnigma",
+            "speaker_text": "Maybe some things are best left buried. Ignorance can be bliss, even if it’s laced with uncertainty. 😔",
+            "audio_duration_in_frames": 172.0,
             "hashed_text": "8",
             "speaker_type": "sub_text",
             "gender": "male"
         },
         {
-            "voice_name": "en-US-Casual-K",
-            "user_name": "SeekingSolace",
-            "speaker_text": "I think the true test lies not in the choice itself, but in how we live with it afterward. Can we find meaning and purpose despite the burden of our actions?",
-            "audio_duration_in_frames": 309.0,
+            "voice_name": "en-US-Studio-O",
+            "user_name": "WhispersOfDoubt",
+            "speaker_text": "But what if it’s something important? What if by staying silent, we’re perpetuating a lie or hurting someone we love? 🤔",
+            "audio_duration_in_frames": 206.0,
             "hashed_text": "9",
             "speaker_type": "sub_text",
             "gender": "female"
+        },
+        {
+            "voice_name": "en-US-Casual-K",
+            "user_name": "HiddenMessages101",
+            "speaker_text": "This is too much! I'm never looking at a hidden message the same way again!  😱",
+            "audio_duration_in_frames": 150.0,
+            "hashed_text": "10",
+            "speaker_type": "sub_text",
+            "gender": "male"
         }
     ]
 }

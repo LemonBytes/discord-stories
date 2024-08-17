@@ -157,7 +157,7 @@ pub fn generate_chat_prompt(schema: String, genre: String, story_type: String) -
     });
 
     let model_answer_two = json!({
-                "story_type": "interactive",
+                "story_type": "chat",
                 "genre": "crazy",
                 "fragments": [
                     {
