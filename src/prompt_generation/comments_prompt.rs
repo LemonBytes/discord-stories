@@ -83,6 +83,87 @@ pub fn generate_comments_prompt(schema: String, genre: String, story_type: Strin
         }
     });
 
+    let model_answer_two = json!({
+        "story": {
+            "story_type": story_type,
+            "genre": genre,
+            "fragments": [
+                {
+                    "voice_name": "default",
+                    "user_name": "CheekyChuckle",
+                    "speaker_text": "What's hard about dating you?",
+                    "audio_duration_in_frames": 0.0,
+                    "hashed_text": "1",
+                    "speaker_type": "title",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "BoobLover3000",
+                    "speaker_text": "i'm terrible at opening up and communicating about my needs.",
+                    "audio_duration_in_frames": 0.0,
+                    "hashed_text": "2",
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "ButtMysteryMan",
+                    "speaker_text": "Same. I wasn't allowed to have needs for a large portion of my life so now it's almost impossible to communicate them.",
+                    "audio_duration_in_frames": 0.0,
+                    "hashed_text": "3",
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "CleavageConnoisseur",
+                    "speaker_text": "When I have a bad day I don't want to talk to anyone. I don't want to be helped either. I just want to exist in silence for a while",
+                    "audio_duration_in_frames": 0.0,
+                    "hashed_text": "4",
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "GiggleGuru",
+                    "speaker_text": "I get really clingy when I fall in love. I know it and I should tone it down but for some reason i have to force myself a lot to do so",
+                    "audio_duration_in_frames": 0.0,
+                    "hashed_text": "5",
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "CheekyChap",
+                    "speaker_text": "Dude same. My poor husband. I just wanna be next to him all the time no matter what we are doing. I want to hear every thought of his as it happens. I want to wear his shirt while HE’S wearing his shirt. 😂 I just WANT him. He doesn’t hate it but he also doesn’t love it so I guess a win is a win.",
+                    "audio_duration_in_frames": 0.0,
+                    "hashed_text": "6",
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "JollyJester",
+                    "speaker_text": "here's the plan. 1. Buy him a shirt way to large for him. 2. Have him put it on in front of you. 3. You can both fit! Do it!",
+                    "audio_duration_in_frames": 0.0,
+                    "hashed_text": "7",
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "WittyWanderer",
+                    "speaker_text": "I want to hear every thought of his This is me too, but didn't actually realize it until just now.I'm single, but when I like somebody I wanna know everything about them. What they're thinking why they think it so on.",
+                    "audio_duration_in_frames": 0.0,
+                    "hashed_text": "8",
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                }
+            ]
+        }
+    });
+
     let contents = json!({
         "contents":[
             {
@@ -98,6 +179,22 @@ pub fn generate_comments_prompt(schema: String, genre: String, story_type: Strin
                 "parts": [
                     {
                         "text": model_answer.to_string()
+                    }
+                ]
+            },
+            {
+                "role": "user",
+                "parts": [
+                    {
+                        "text": "Generate a funny question which is like 'Why is boob cleavage ok but not butt cleavage?'"
+                    }
+                ]
+            },
+            {
+                "role": "model",
+                "parts": [
+                    {
+                        "text": model_answer_two.to_string()
                     }
                 ]
             },

@@ -1,59 +1,86 @@
 {
-    "story_type": "narrator",
-    "genre": "crazy",
+    "story_type": "chat",
+    "genre": "horrific",
     "fragments": [
         {
-            "voice_name": "en-US-Standard-J",
-            "user_name": "darkrainbow",
-            "speaker_text": "Framed! On the Run With the Student I Shouldn't Trust",
-            "audio_duration_in_frames": 129.0,
+            "voice_name": "en-US-Studio-O",
+            "user_name": "Insomniac262",
+            "speaker_text": "If you were forced to choose between saving a loved one or ten strangers from certain death, and the choice would remain a secret forever, what would you do?",
+            "audio_duration_in_frames": 297.0,
             "hashed_text": "1",
             "speaker_type": "title",
-            "gender": "female"
+            "gender": "male"
         },
         {
-            "voice_name": "en-US-Standard-J",
-            "user_name": "darkrainbow",
-            "speaker_text": "The flickering neon sign outside my motel window cast everything in a sickly green hue, highlighting the cheap wood veneer and threadbare carpet. It was a far cry from the meticulously organized life I led a week ago, back when I was Ms. Eleanor Wright, respected high school English teacher. Now, I was a fugitive, framed for a crime I didn't commit, and my only ally was the last person anyone would expect – Jason Walker, the rebellious, motorcycle-riding student notorious for challenging my every rule.",
-            "audio_duration_in_frames": 930.0,
+            "voice_name": "en-US-Studio-O",
+            "user_name": "TornBetweenWorlds",
+            "speaker_text": "This question haunts me. My heart screams 'save my loved one,' but logic whispers about the ten lives at stake. The guilt from either choice would be unbearable.",
+            "audio_duration_in_frames": 253.0,
             "hashed_text": "2",
-            "speaker_type": "main",
-            "gender": "female"
+            "speaker_type": "sub_text",
+            "gender": "male"
         },
         {
-            "voice_name": "en-US-Standard-J",
-            "user_name": "darkrainbow",
-            "speaker_text": "It all started with the annual school fundraiser. Someone had replaced the prize money with counterfeit bills, a hefty sum that vanished from the locked safe in the principal's office. Fingers pointed at me; after all, I had been the last one to leave that night, a fact corroborated by none other than Jason, who claimed to have seen me leaving the office.",
-            "audio_duration_in_frames": 618.0,
+            "voice_name": "en-US-Studio-O",
+            "user_name": "EthicalConundrum",
+            "speaker_text": "Is it ethical to prioritize emotional connection over the greater good? Would saving fewer lives be less of a sacrifice, even if it meant betraying a fundamental human instinct?",
+            "audio_duration_in_frames": 335.0,
             "hashed_text": "3",
-            "speaker_type": "main",
-            "gender": "female"
+            "speaker_type": "sub_text",
+            "gender": "male"
         },
         {
-            "voice_name": "en-US-Standard-J",
-            "user_name": "darkrainbow",
-            "speaker_text": "But Jason wasn't a cold-hearted liar. He knew I was innocent. He had seen someone else lurking around that night, a shadowy figure he couldn't quite place. And so began our unlikely alliance. He offered me an escape on his beat-up Harley, the roar of its engine a defiant anthem against the accusations swirling around us.",
-            "audio_duration_in_frames": 622.0,
+            "voice_name": "en-US-Casual-K",
+            "user_name": "HauntedByChoice",
+            "speaker_text": "Years ago, I faced a similar dilemma. A fire trapped my brother and a group of children. I saved my brother. The guilt still consumes me, a constant reminder of the lives I couldn't save.",
+            "audio_duration_in_frames": 344.0,
             "hashed_text": "4",
-            "speaker_type": "main",
+            "speaker_type": "sub_text",
             "gender": "female"
         },
         {
-            "voice_name": "en-US-Standard-J",
-            "user_name": "darkrainbow",
-            "speaker_text": "Now, we were on the run, two unlikely allies thrown together by fate.  The evidence, meticulously planted, painted me as a desperate woman who had used her position for financial gain. But Jason, with his street smarts and unwavering loyalty, was determined to clear my name.",
-            "audio_duration_in_frames": 542.0,
+            "voice_name": "en-US-Casual-K",
+            "user_name": "SilentSuffering",
+            "speaker_text": "The real horror lies in the secret. Living with the knowledge of your choice, the potential for regret and self-hatred, that’s the true punishment.",
+            "audio_duration_in_frames": 253.0,
             "hashed_text": "5",
-            "speaker_type": "main",
+            "speaker_type": "sub_text",
+            "gender": "male"
+        },
+        {
+            "voice_name": "en-US-Studio-O",
+            "user_name": "UncertainFuture",
+            "speaker_text": "The question assumes we have control. What if fate decides? We might believe we're making a choice when, in reality, it's already been made for us.",
+            "audio_duration_in_frames": 261.0,
+            "hashed_text": "6",
+            "speaker_type": "sub_text",
+            "gender": "male"
+        },
+        {
+            "voice_name": "en-US-Casual-K",
+            "user_name": "HopeInHumanity",
+            "speaker_text": "This assumes the worst in humanity. Maybe, faced with the truth, others would understand the impossible choice you had to make. There's always hope for compassion.",
+            "audio_duration_in_frames": 282.0,
+            "hashed_text": "7",
+            "speaker_type": "sub_text",
             "gender": "female"
         },
         {
-            "voice_name": "en-US-Standard-J",
-            "user_name": "darkrainbow",
-            "speaker_text": "We were an odd pair, the straight-laced teacher and the rebellious student, racing against time, searching for the truth that would set us free. And somewhere along the desolate highways and anonymous motels,  a grudging respect blossomed, fueled by adrenaline and the constant threat hanging over our heads.  Little did I know, this was just the beginning of a treacherous journey, a high-stakes game where one wrong move could cost us our lives.",
-            "audio_duration_in_frames": 762.0,
-            "hashed_text": "6",
-            "speaker_type": "main",
+            "voice_name": "en-US-Studio-O",
+            "user_name": "ExistentialDread",
+            "speaker_text": "The scariest part is that there’s no right answer. It's a lose-lose situation, a chilling reminder of our own mortality and the impossible choices life throws our way.",
+            "audio_duration_in_frames": 315.0,
+            "hashed_text": "8",
+            "speaker_type": "sub_text",
+            "gender": "male"
+        },
+        {
+            "voice_name": "en-US-Casual-K",
+            "user_name": "SeekingSolace",
+            "speaker_text": "I think the true test lies not in the choice itself, but in how we live with it afterward. Can we find meaning and purpose despite the burden of our actions?",
+            "audio_duration_in_frames": 309.0,
+            "hashed_text": "9",
+            "speaker_type": "sub_text",
             "gender": "female"
         }
     ]

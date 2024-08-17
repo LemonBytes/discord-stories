@@ -28,6 +28,7 @@ pub mod adapters {
 }
 
 pub mod prompt_generation {
+    pub mod chat_prompt;
     pub mod comments_prompt;
     pub mod generate_prompt;
     pub mod generate_schema;
@@ -91,50 +92,50 @@ async fn main() {
     //######################################################################################
 
     /*  let project_id = dotenv!("PROJECT_ID");
-       let model_id = dotenv!("MODEL_ID");
+    let model_id = dotenv!("MODEL_ID");
 
-       let client_gemini = reqwest::Client::new();
+    let client_gemini = reqwest::Client::new();
 
-       // Construct the URL
-       let url = format!(
+    // Construct the URL
+    let url = format!(
                      "https://us-central1-aiplatform.googleapis.com/v1/projects/{}/locations/europe-central2/publishers/google/models/{}:generateContent",
                      project_id, model_id
                  );
 
-       let story_prompt = generate_api_prompt();
+    let story_prompt = generate_api_prompt();
 
-       //println!("{}", story_prompt);
+    //println!("{}", story_prompt);
 
-       // Send the POST request
-       let response = client_gemini
-           .post(&url)
-           .bearer_auth(token.unwrap().as_str())
-           .header("Content-Type", "application/json")
-           .json(&story_prompt)
-           .send()
-           .await
-           .unwrap();
+    // Send the POST request
+    let response = client_gemini
+        .post(&url)
+        .bearer_auth(token.unwrap().as_str())
+        .header("Content-Type", "application/json")
+        .json(&story_prompt)
+        .send()
+        .await
+        .unwrap();
 
-       // Handle the response
-       if response.status().is_success() {
-           let resp_json: serde_json::Value = response.json().await.unwrap();
+    // Handle the response
+    if response.status().is_success() {
+        let resp_json: serde_json::Value = response.json().await.unwrap();
 
-           let candidates = &resp_json.get("candidates").unwrap();
-           let first_candidates = candidates.get(0).unwrap();
-           let content = first_candidates.get("content").unwrap();
-           let parts = content.get("parts").unwrap();
-           let first_part = parts.get(0).unwrap();
-           let text = first_part.get("text").unwrap();
+        let candidates = &resp_json.get("candidates").unwrap();
+        let first_candidates = candidates.get(0).unwrap();
+        let content = first_candidates.get("content").unwrap();
+        let parts = content.get("parts").unwrap();
+        let first_part = parts.get(0).unwrap();
+        let text = first_part.get("text").unwrap();
 
-           println!("{:?}", text);
-           // Convert the Value back into a pretty-printed JSON string
-           let input = serde_json::to_string_pretty(text).unwrap();
+        println!("{:?}", text);
+        // Convert the Value back into a pretty-printed JSON string
+        let input = serde_json::to_string_pretty(text).unwrap();
 
-           let _ = format_json(&input);
-       } else {
-           eprintln!("Request failed with status: {:?}", response);
-       }
-    */
+        let _ = format_json(&input);
+    } else {
+        eprintln!("Request failed with status: {:?}", response);
+    } */
+
     //######################################################################################
     ////################################ GENERATE VOICE
     //######################################################################################
@@ -145,53 +146,53 @@ async fn main() {
 
     /* let params = [("key", dotenv!("TTS_API_KEY"))];
 
-       let client = reqwest::Client::new();
-       let base_url = Url::parse("https://texttospeech.googleapis.com").unwrap();
-       let endpoint = base_url.join("/v1/text:synthesize").unwrap();
-       let call_url = Url::parse_with_params(Url::as_str(&endpoint), params).unwrap();
+    let client = reqwest::Client::new();
+    let base_url = Url::parse("https://texttospeech.googleapis.com").unwrap();
+    let endpoint = base_url.join("/v1/text:synthesize").unwrap();
+    let call_url = Url::parse_with_params(Url::as_str(&endpoint), params).unwrap();
 
-       let file = fs::File::open(story_path).expect("file should open read only");
+    let file = fs::File::open(story_path).expect("file should open read only");
 
-       let story: Story = serde_json::from_reader(&file).expect("file should be proper JSON");
+    let story: Story = serde_json::from_reader(&file).expect("file should be proper JSON");
 
-       write_voices(story_path);
+    write_voices(story_path);
 
-       for speaker in story.fragments {
-           let request_body = RequestBody {
-               voice: Voice {
-                   language_code: String::from("en-US"),
-                   name: String::from(speaker.voice_name),
-               },
-               audio_config: AudioConfig {
-                   audio_encoding: String::from("MP3"),
-                   speaking_rate: 1.0,
-               },
-               input: Input {
-                   text: speaker.speaker_text,
-               },
-           };
+    for speaker in story.fragments {
+        let request_body = RequestBody {
+            voice: Voice {
+                language_code: String::from("en-US"),
+                name: String::from(speaker.voice_name),
+            },
+            audio_config: AudioConfig {
+                audio_encoding: String::from("MP3"),
+                speaking_rate: 1.4,
+            },
+            input: Input {
+                text: speaker.speaker_text,
+            },
+        };
 
-           let serialized_body = serde_json::to_string(&request_body).unwrap();
+        let serialized_body = serde_json::to_string(&request_body).unwrap();
 
-           let response = client
-               .post(call_url.clone())
-               .header(CONTENT_TYPE, "application/json")
-               .body(serialized_body)
-               .send()
-               .await
-               .unwrap();
+        let response = client
+            .post(call_url.clone())
+            .header(CONTENT_TYPE, "application/json")
+            .body(serialized_body)
+            .send()
+            .await
+            .unwrap();
 
-           let body = response.json::<ResponseBody>().await.expect("body invalid");
-           println!("{:?}", body);
-           let mut out = File::create(audio_path.to_owned() + &speaker.hashed_text + ".mp3")
-               .expect("failed to create file");
+        let body = response.json::<ResponseBody>().await.expect("body invalid");
+        println!("{:?}", body);
+        let mut out = File::create(audio_path.to_owned() + &speaker.hashed_text + ".mp3")
+            .expect("failed to create file");
 
-           let mut decoder = DecoderReader::new(body.audio_content.as_bytes(), &STANDARD);
-           let _ = copy(&mut decoder, &mut out).unwrap();
-       }
+        let mut decoder = DecoderReader::new(body.audio_content.as_bytes(), &STANDARD);
+        let _ = copy(&mut decoder, &mut out).unwrap();
+    }
 
-       write_duration(story_path, audio_path);
-    */
+    write_duration(story_path, audio_path); */
+
     // We are expecting an MP3 file
 
     //######################################################################################
@@ -205,7 +206,22 @@ async fn main() {
 
     let story: Story = serde_json::from_reader(&file).expect("file should be proper JSON");
 
-    match story.story_type {
+    Command::new("npx.cmd")
+        .stdout(Stdio::inherit())
+        .current_dir(r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo")
+        .args([
+            "--max-old-space-size=8192",
+            "remotion",
+            "render",
+            "./src/index.ts",
+            "Story",
+            "./public/temp_assets/temp/uncaptioned_story.mp4",
+            "--concurrency=1",
+        ])
+        .output()
+        .expect("error");
+
+    /*  match story.story_type {
         entities::entities::StoryType::Narrator(_) => {
             Command::new("npx.cmd")
                 .stdout(Stdio::inherit())
@@ -242,22 +258,8 @@ async fn main() {
                 .output()
                 .expect("error");
         }
-        entities::entities::StoryType::Comments(_) => {
-            Command::new("npx.cmd")
-                .stdout(Stdio::inherit())
-                .current_dir(r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo")
-                .args([
-                    "remotion",
-                    "render",
-                    "./src/index.ts",
-                    "Story",
-                    "./public/temp_assets/temp/uncaptioned_story.mp4",
-                    "--concurrency=1",
-                ])
-                .output()
-                .expect("error");
-        }
+        entities::entities::StoryType::Comments(_) => {}
         entities::entities::StoryType::Chat(_) => todo!(),
         entities::entities::StoryType::Call(_) => todo!(),
-    }
+    } */
 }

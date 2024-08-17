@@ -18,14 +18,14 @@
 	"dependencies": {
 		"@remotion/animation-utils": "^4.0.132",
 		"@remotion/bundler": "^4.0.153",
-		"@remotion/cli": "^4.0.132",
+		"@remotion/cli": "4.0.200",
 		"@remotion/layout-utils": "^4.0.132",
 		"@remotion/media-utils": "^4.0.132",
 		"@remotion/zod-types": "^4.0.132",
 		"axios": "^1.6.8",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
-		"remotion": "^4.0.132",
+		"remotion": "4.0.200",
 		"zod": "3.22.3"
 	},
 	"devDependencies": {

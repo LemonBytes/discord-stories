@@ -2,7 +2,7 @@ import React from 'react';
 import {Img, staticFile} from 'remotion';
 import {Delayed} from '../hooks/Delayed';
 
-interface IChatMessageText {
+export interface IChatMessageText {
 	text: string;
 	userName: string;
 }

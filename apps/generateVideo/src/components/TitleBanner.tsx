@@ -24,7 +24,6 @@ export const TitleBanner: React.FC<IBanner> = ({
 	const opacity = interpolate(
 		frame,
 		[0, 30, duruation - 20, duruation],
-
 		[0, 1, 1, 0],
 	);
 
