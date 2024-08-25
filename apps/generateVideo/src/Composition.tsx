@@ -1,6 +1,13 @@
 /* eslint-disable react/no-unused-prop-types */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {AbsoluteFill, Sequence, staticFile, Audio, Video} from 'remotion';
+import {
+	AbsoluteFill,
+	Sequence,
+	staticFile,
+	Audio,
+	Video,
+	random,
+} from 'remotion';
 import {ChatMessageBanner} from './components/ChatMessageBanner';
 import React from 'react';
 import {TitleBanner} from './components/TitleBanner';
@@ -38,6 +45,10 @@ export const calculatingStartingFrame = (
 	return startingFrame;
 };
 
+function getRandomNumber(min: number, max: number, seed: string): number {
+	return Math.floor(random(seed) * (max - min + 1)) + min;
+}
+
 // TO DO
 // create general file path
 // dynamic background video
@@ -55,9 +66,9 @@ export const MyComposition: React.FC<Story> = (story) => {
 					))}
 				<Audio
 					loop
-					volume={0.15}
+					volume={0.2}
 					src={staticFile(
-						`/assets/background_sounds/scary_background_sound.mp3`,
+						`/assets/background_sounds/background_sound_${getRandomNumber(1, 4, story.fragments[0].text)}.mp3`,
 					)}
 				/>
 				<Video
@@ -65,7 +76,7 @@ export const MyComposition: React.FC<Story> = (story) => {
 					loop
 					startFrom={SKIP_FRAMES_FOR_NOTIFICATION}
 					src={staticFile(
-						'/assets/background_videos/default_background_video.mp4',
+						`/assets/background_videos/background_video_${getRandomNumber(1, 6, story.fragments[1].text)}.mp4`,
 					)}
 					style={{height: 1920, width: 1080}}
 				/>
@@ -74,7 +85,6 @@ export const MyComposition: React.FC<Story> = (story) => {
 						style={{
 							display: 'flex',
 							justifyItems: 'center',
-							border: '1px solid red',
 						}}
 					>
 						<Server {...story} />

@@ -3,6 +3,7 @@ name = "discord-stories"
 version = "0.1.0"
 edition = "2021"
 
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 
@@ -15,7 +16,7 @@ dotenv_codegen = "0.15.0"
 gcp_auth = "0.12.2"
 lofty = "0.19.2"
 rand = "0.8.5"
-reqwest =  { version = "0.12.4" , features = ["blocking", "json"] }
+reqwest =  { version = "0.12.4" , features = ["blocking", "json", "stream"] }
 serde = {version= "1.0.198",  features = ["derive"] }
 serde_json =   {version="1.0.116",  features = ["preserve_order"] }
 tokio =   { version = "1.37.0" , features = ["full"] } 

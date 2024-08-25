@@ -44,6 +44,14 @@ pub enum StoryGenre {
 }
 
 #[derive(Serialize, Deserialize, Debug)]
+#[serde(rename_all = "snake_case")]
+pub struct Story {
+    pub story_type: StoryType,
+    pub genre: StoryGenre,
+    pub fragments: Vec<Fragments>,
+}
+
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Fragments {
     pub voice_name: String,
     pub user_name: String,
@@ -51,13 +59,14 @@ pub struct Fragments {
     pub audio_duration_in_frames: f32,
     pub hashed_text: String,
     pub speaker_type: SpeakerType,
-    pub gender: Gender,
+    pub gender: String,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
 #[serde(rename_all = "snake_case")]
-pub struct Story {
-    pub story_type: StoryType,
-    pub genre: StoryGenre,
-    pub fragments: Vec<Fragments>,
+#[serde(untagged)]
+#[derive(Clone)]
+pub enum Language {
+    German(String),
+    English(String),
 }

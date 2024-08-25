@@ -39,7 +39,7 @@ pub fn write_duration(story_path: &str, audio_path: &str) {
     let _ = file_write.write(&json.as_bytes());
 }
 
-pub fn write_voices(story_path: &str) {
+pub fn write_voices(story_path: &str, language: String) {
     let file_read = fs::File::options()
         .read(true)
         .open(story_path)
@@ -56,7 +56,7 @@ pub fn write_voices(story_path: &str) {
             speaker.voice_name = voice.clone();
         } else {
             // Otherwise, generate a new voice based on the gender
-            let random_voice = get_voices_google(speaker.gender.clone());
+            let random_voice = get_voices_google(speaker.gender.clone(), language.to_string());
             // Assign the generated voice to the speaker
             speaker.voice_name = random_voice.clone();
             // Store the assigned voice in the HashMap

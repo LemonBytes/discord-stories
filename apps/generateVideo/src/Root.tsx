@@ -1,6 +1,12 @@
 import {useState} from 'react';
 import {useEffect} from 'react';
-import {Composition, staticFile} from 'remotion';
+import {
+	cancelRender,
+	Composition,
+	continueRender,
+	delayRender,
+	staticFile,
+} from 'remotion';
 import {
 	CaptionedVideo,
 	calculateCaptionedVideoMetadata,
@@ -23,24 +29,31 @@ const calculateVideoFrames = (fragments: StoryFragment[] | null) => {
 };
 
 export const RemotionRoot: React.FC = () => {
-	const [story, setStoryData] = useState<Story>();
+	const [story, setStoryData] = useState<Story | undefined>(undefined);
+	const [handle] = useState(() => delayRender());
 
 	useEffect(() => {
 		const fetchStory = async () => {
-			const response = await axios.get(
-				staticFile('/temp_assets/story_fragments.json'),
-			);
-			const speakerMapper = new StoryMapper();
-			const parsedStory = speakerMapper.mapStoryResponse(response);
-			setStoryData(parsedStory);
+			try {
+				const response = await axios.get(
+					staticFile('/temp_assets/story_fragments.json'),
+				);
+				const speakerMapper = new StoryMapper();
+				const parsedStory = speakerMapper.mapStoryResponse(response);
+				setStoryData(parsedStory);
+				continueRender(handle);
+			} catch (error) {
+				cancelRender(error);
+			}
 		};
+
 		fetchStory();
-	}, []);
+	}, [handle]);
 
 	if (!story) {
 		return null;
 	}
-
+	console.log(story);
 	return (
 		<>
 			<Composition

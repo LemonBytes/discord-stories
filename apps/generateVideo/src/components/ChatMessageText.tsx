@@ -11,7 +11,6 @@ export const ChatMessageText: React.FC<IChatMessageText> = ({
 	text,
 	userName,
 }) => {
-	console.log(text.split('').length);
 	return (
 		<div>
 			<div className="flex justify-between p-5 mt-3">
