@@ -1,33 +1,13 @@
-use crate::entities::entities::Story;
-use std::{
-    fs,
-    process::{Command, Stdio},
+use crate::entities::{
+    self,
+    entities::{Story, StoryType},
 };
+use std::process::{Command, Stdio};
 
-const STORY_PATH: &str = r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo\public\temp_assets\story_fragments.json";
-
-pub fn generate_video() {
-    let file = fs::File::open(STORY_PATH).expect("file should open read only");
-
-    //let story: Story = serde_json::from_reader(&file).expect("file should be proper JSON");
-
-    Command::new("npx.cmd")
-        .stdout(Stdio::inherit())
-        .current_dir(r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo")
-        .args([
-            "--max-old-space-size=8192",
-            "remotion",
-            "render",
-            "./src/index.ts",
-            "Story",
-            "./public/temp_assets/temp/uncaptioned_story.mp4",
-            "--concurrency=1",
-        ])
-        .output()
-        .expect("error");
-
-    /*    match story.story_type {
-        entities::entities::StoryType::Narrator(_) => {
+pub fn generate_video(story_type: StoryType) {
+    match story_type {
+        StoryType::Narrator(_) => {
+            // Render the uncaptioned video
             Command::new("npx.cmd")
                 .stdout(Stdio::inherit())
                 .current_dir(r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo")
@@ -40,15 +20,17 @@ pub fn generate_video() {
                     "--concurrency=1",
                 ])
                 .output()
-                .expect("error");
+                .expect("Failed to render uncaptioned story");
 
+            // Run node script to add subtitles
             Command::new("node")
                 .stdout(Stdio::inherit())
                 .current_dir("./apps/generateVideo")
                 .args(["sub.mjs", "./public/temp_assets/temp/uncaptioned_story.mp4"])
                 .output()
-                .expect("error");
+                .expect("Failed to add subtitles");
 
+            // Render the captioned video
             Command::new("npx.cmd")
                 .stdout(Stdio::inherit())
                 .current_dir("./apps/generateVideo")
@@ -61,10 +43,11 @@ pub fn generate_video() {
                     "--concurrency=1",
                 ])
                 .output()
-                .expect("error");
+                .expect("Failed to render captioned story");
         }
-        entities::entities::StoryType::Comments(_) => {}
-        entities::entities::StoryType::Chat(_) => {
+
+        StoryType::Chat(_) => {
+            // Render the chat video
             Command::new("npx.cmd")
                 .stdout(Stdio::inherit())
                 .current_dir(r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo")
@@ -77,8 +60,18 @@ pub fn generate_video() {
                     "--concurrency=1",
                 ])
                 .output()
-                .expect("error");
+                .expect("Failed to render chat video");
         }
-        entities::entities::StoryType::Call(_) => todo!(),
-    } */
+
+        StoryType::Call(_) => {
+            // Handle the Call variant (to be implemented)
+            todo!("Call variant is not yet implemented.");
+        }
+
+        StoryType::Comments(_) => {
+            // Handle the Comments variant
+            // Implement functionality if needed or leave as a no-op
+            println!("Comments variant detected. No specific handling implemented.");
+        }
+    }
 }

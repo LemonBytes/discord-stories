@@ -5,13 +5,31 @@ use serde_json::{json, Value};
 use crate::entities::entities::{Gender, Language, StoryGenre, StoryType};
 
 pub fn get_voices_google(gender: Gender, language: Language) -> String {
+
+
+    let eleven_female_en = vec![
+       "cgSgspJ2msm6clMCkdW9",
+       "FGY2WhTYpPnrIDTdsKH5",
+       "XrExE9yKIg1WjnnlVkGX",
+       "EXAVITQu4vr4xnSDxMaL",
+    ];
+
+    
+    let eleven_male_en = vec![
+        "bIHbv24MWmeRgasZH58o",
+        "bIHbv24MWmeRgasZH58o",
+        "iP95p4xoKVk53GoZ742B",
+        "IKne3meq5aSn9XLyUdCD"
+    ];
+
+
+
     let en_male = vec![
-        "en-US-Studio-O",
-        "en-US-Neural2-D",
-        "en-US-Neural2-J",
-        "en-IN-Standard-C",
-        "en-IN-Wavenet-B",
-        "en-US-Standard-J",
+       "en-US-Casual-K",
+       "en-US-Journey-D",
+       "en-US-Casual-K",
+       "en-US-Neural2-J",
+       "en-US-Polyglot-1",
     ];
 
     let en_female = vec![
@@ -19,7 +37,6 @@ pub fn get_voices_google(gender: Gender, language: Language) -> String {
         "en-US-Journey-O",
         "en-US-Journey-F",
         "en-US-Neural2-C",
-        "en-US-Journey-D",
     ];
 
     let de_male = vec![
@@ -37,8 +54,8 @@ pub fn get_voices_google(gender: Gender, language: Language) -> String {
             Gender::Female(_) => &de_female,
         },
         Language::English(_) => match gender {
-            Gender::Male(_) => &en_male,
-            Gender::Female(_) => &en_female,
+            Gender::Male(_) => &eleven_male_en,
+            Gender::Female(_) => &eleven_female_en,
         },
     };
 
@@ -439,35 +456,71 @@ pub fn get_topic() -> String {
         "What’s the weirdest thing you’ve overheard in a public restroom?",
         "Should the U.S. become socialist?",
         "What’s your most embarrassing moment?",
+        "Unpopular opinion: Transgender are treating a stable society. but hear me out…",
         "Biden",
+        "What's the one thing you learned too late in life?",
         "Describe a moment when you realized you knew too much about someone’s private life.",
+        "I found out my dad has a secret family – now what?",
         "What’s the most puzzling mystery you’ve ever encountered?",
+        "The most underrated life hack that no one talks about is…",
         "Have you ever discovered something that made you question everything?",
+        "My friend is secretly in love with my partner – should I confront them?",
+        "My stepfather started touching me when I was 10 – I never told my mom.",
+        "My parents disowned me after I came out – here’s my story.",
+        "Caught my partner in the act – here's what I did next.",
         "Should animals be used for scientific or commercial testing?",
+        "I found out my partner is leading a double life – what should I do now?",
         "What’s the strangest coincidence you’ve noticed in your life?",
+        "Here’s the dumbest thing I believed as a kid that actually makes sense now…",
+        "I was taken advantage of by a neighbor – how do I face them every day?",
+        "I was sexually abused by my older cousin, and no one believed me – how do I find justice now?",
         "Describe a time when you found something that shouldn’t have been there.",
+        "If you could tell your younger self one thing, what would it be?",
         "What’s the most intriguing secret someone’s ever shared with you?",
         "Have you ever witnessed something that made you rethink reality?",
+        "I’m being blackmailed by someone close to me – here’s how I’m handling it.",
+        "My coach touched me inappropriately during practice – I’m not sure how to report it.",
+        "I found out my boyfriend is cheating on me, and I’m exposing him.",
         "Influencers negatively affect teenagers’ body image.",
         "What’s the most fascinating rumor you’ve heard that turned out to be true?",
         "Social Media: Is social media good for society?",
+        "My family doesn’t believe me when I say my uncle touched me.",
+        "Choose a topic which would go viral",
         "Which is better- TikTok or Instagram",
+        "Tell me you're living in 3024 without telling me you're living in 3024.",
+        "I’m living with the trauma of being sexually abused by someone I trusted.",
         "Have you ever found a hidden message or code in something unexpected?",
         "Russian hacking",
         "What’s the most perplexing question you’ve never found an answer to?",
+        "Why ‘healthy at any size’ is a dangerous myth no one wants to talk about.",
+        "My sibling betrayed me for money – can I ever trust them again?",
         "Electric cars are overrated.",
+        "My brother’s friend assaulted me, and I’m scared to tell anyone – what should I do?",
         "Are socks with sandals a fashion faux pas or a bold statement?",
+        "My boyfriend hits me, but I’m scared to leave – what should I do?",
+        "People always ask me how I did this… Here’s the secret!",
         "What’s the most unusual fact you’ve come across?",
+        "My uncle molested me, and no one in my family believes me.",
         "Human cloning",
+        "Choose a topic which would go viral",
         "Should parents or other adults be able to ban books from schools and libraries?",
-        "Fat people",
+        "I forgave my partner for cheating, but now I regret it – what should I do?",
+        "The craziest thing I've seen at work that no one would believe…",
+        "I was sexually abused by a family member, and I’m finally ready to talk about it.",
+        "Russian hacking",
         "Fat gay people",
         "Fat models are stupid",
+        "Why the body positivity movement is problematic.",
+        "How to spot red flags in 10 seconds – trust me, this works.",
+        "Here’s what happened when I decided to say YES to everything for 24 hours…",
+        "What’s a scam that's become so normalized that we don't even question it anymore?",
         "vaccination",
         "Mind Controll",
-        "Flat Earth",
+        "Choose a topic which would go viral",
+        "My wife cheated on me with my best friend – here's how I found out.",
         "Racial profiling",
         "Fortnite is gay",
+        "The truth about Flat Earth: What they don't want you to know.",
         "What’s the most curious encounter you’ve had with a stranger?",
         "Death Penalty: Should the death penalty be legal?",
         "Human trafficking",
@@ -547,6 +600,8 @@ pub fn get_topic() -> String {
         "finding an old letter that reveals a shocking truth",
         "uncovering a family secret that could destroy everything",
         "an unexpected inheritance with a dark history",
+        "confronting a difficult truth about yourself that you can't ignore",
+        "loosing all money to ex wife",
         "being betrayed by a trusted friend at the worst possible moment",
         "revealing a surprise pregnancy that complicates everything",
         "getting caught in a lie that snowballs out of control",
@@ -558,6 +613,9 @@ pub fn get_topic() -> String {
         "finding a lost item of great value, but it belongs to someone dangerous",
         "being accused of something you didn’t do, leading to unexpected consequences",
         "receiving a mysterious message that changes your life",
+        "discovering a partner's infidelity through a misplaced text",
+        "facing a life-or-death situation with an unlikely ally",
+        "a surprise party that goes horribly wrong",
         "all man are the same",
         "What’s the scariest thing you’ve ever found in an abandoned place?",
         "What’s the most frightening experience you’ve ever had?",
@@ -679,9 +737,7 @@ pub fn get_peoples_involved() -> std::string::String {
 pub fn get_situations() -> std::string::String {
     let situations_list = vec![
             "a heated argument over a trivial matter that spirals out of control",
-            "discovering a partner's infidelity through a misplaced text",
-            "facing a life-or-death situation with an unlikely ally",
-            "a surprise party that goes horribly wrong",
+           
             "a family argument that reveals long-buried secrets",
             "winning the lottery but losing trust in everyone around you",
             "a secret love affair exposed in the most public way",

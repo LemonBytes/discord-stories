@@ -57,7 +57,7 @@ pub struct Fragments {
     pub user_name: String,
     pub speaker_text: String,
     pub audio_duration_in_frames: f32,
-    pub hashed_text: String,
+    pub speaker_order: u8,
     pub speaker_type: SpeakerType,
     pub gender: String,
 }

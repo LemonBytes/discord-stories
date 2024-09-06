@@ -6,6 +6,9 @@ use base64::read::DecoderReader;
 use reqwest::{header::CONTENT_TYPE, Client, Url};
 use serde::{Deserialize, Serialize};
 use std::error::Error;
+use std::io::Write;
+use std::thread;
+use std::time::Duration;
 use std::{fs::File, io};
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -40,8 +43,11 @@ struct ResponseBody {
 
 const STORY_PATH: &str = r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo\public\temp_assets\story_fragments.json";
 const AUDIO_PATH: &str = r"C:\Users\miche\Desktop\Projekte\discord-stories\apps\generateVideo\public\temp_assets\story_audio\";
-
-pub async fn generate_audio(client: Client, language: Language) -> Result<(), Box<dyn Error>> {
+/*
+pub async fn generate_audio_vertex(
+    client: Client,
+    language: Language,
+) -> Result<(), Box<dyn Error>> {
     let params = [("key", dotenv!("TTS_API_KEY"))];
 
     let base_url = Url::parse("https://texttospeech.googleapis.com")?;
@@ -66,7 +72,7 @@ pub async fn generate_audio(client: Client, language: Language) -> Result<(), Bo
             },
             audio_config: AudioConfig {
                 audio_encoding: String::from("MP3"),
-                speaking_rate: 1.35,
+                speaking_rate: 1.3,
             },
             input: Input {
                 text: speaker.speaker_text,
@@ -83,11 +89,60 @@ pub async fn generate_audio(client: Client, language: Language) -> Result<(), Bo
             .await?;
 
         let body = response.json::<ResponseBody>().await?;
-        println!("{:?}", body);
 
         let mut out = File::create(AUDIO_PATH.to_owned() + &speaker.hashed_text + ".mp3")?;
         let mut decoder = DecoderReader::new(body.audio_content.as_bytes(), &STANDARD);
         io::copy(&mut decoder, &mut out)?;
+        thread::sleep(Duration::from_secs(1));
+    }
+
+    write_duration(STORY_PATH, AUDIO_PATH);
+
+    Ok(())
+} */
+
+pub async fn generate_audio_eleven_labs(
+    client: Client,
+    language: Language,
+) -> Result<(), Box<dyn Error>> {
+    const CHUNK_SIZE: usize = 1024;
+    write_voices(STORY_PATH, language);
+    let url = "https://api.elevenlabs.io/v1/text-to-speech/";
+    let api_key = dotenv!("ELEVEN_LABS_KEY_4");
+
+    let file = File::open(STORY_PATH)?;
+    let story: Story = serde_json::from_reader(&file)?;
+
+    for speaker in story.fragments {
+        let data = serde_json::json!({
+            "text": speaker.speaker_text,
+            "model_id": "eleven_multilingual_v2",
+            "voice_settings": {
+                "stability": 0.3,
+                "similarity_boost": 0.6
+
+            }
+        });
+
+        let response = client
+            .post(format!("{}{}", url, speaker.voice_name))
+            .header("Accept", "audio/mpeg")
+            .header("Content-Type", "application/json")
+            .header("xi-api-key", api_key)
+            .json(&data)
+            .send()
+            .await?;
+
+        let mut file =
+            File::create(AUDIO_PATH.to_owned() + &speaker.speaker_order.to_string() + ".mp3")?;
+
+        let bytes = response.bytes().await.unwrap();
+        let content = bytes.as_ref().chunks(CHUNK_SIZE);
+
+        for chunk in content {
+            file.write_all(chunk)?;
+        }
+        thread::sleep(Duration::from_secs(1));
     }
 
     write_duration(STORY_PATH, AUDIO_PATH);

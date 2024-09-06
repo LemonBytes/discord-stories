@@ -1,6 +1,6 @@
 use serde_json::{json, Value};
 
-pub fn get_model_trainings_answers(story_type: String) -> Vec<Value> {
+pub fn get_chat_model_trainings_answers(story_type: String) -> Vec<Value> {
     let model_answer = json!({
         "story_type": story_type,
         "genre": "drama",

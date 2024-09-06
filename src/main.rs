@@ -1,8 +1,9 @@
 #![recursion_limit = "256"]
 use adapters::audio::handle_generate_audio::handle_generate_audio;
-use adapters::text::generate_text::generate_text;
+use adapters::text::generate_text::{generate_text_gpt, generate_text_vertex};
 use adapters::video::generate_video::generate_video;
 use entities::entities::Language;
+use prompt_generation::story_config::get_story_type;
 use serde_json::json;
 
 #[macro_use]
@@ -19,6 +20,7 @@ pub mod prompt_generation {
     }
     pub mod narrator {
         pub mod generate_narrator_prompt;
+        pub mod narrator_model_training;
         pub mod narrator_to_llm;
     }
     pub mod comments {
@@ -54,12 +56,14 @@ pub mod entities {
 async fn main() {
     let client = reqwest::Client::new();
 
+    let story_type = get_story_type();
+
     let german = Language::German(String::from("de-DE"));
     let english = Language::English(String::from("en-US"));
 
-    generate_text(&client, english.clone()).await;
+    generate_text_gpt(&client, english.clone(), story_type.clone()).await;
 
     handle_generate_audio(client, english.clone()).await;
 
-    generate_video();
+    generate_video(story_type.clone());
 }

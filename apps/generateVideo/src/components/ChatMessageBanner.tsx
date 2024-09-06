@@ -14,6 +14,7 @@ export interface IBanner {
 	text: string;
 	userName: string;
 	duruation: number;
+	gender?: string;
 }
 
 export const ChatMessageBanner: React.FC<IBanner> = ({

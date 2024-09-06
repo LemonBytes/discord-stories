@@ -1,0 +1,769 @@
+{
+    "stories": [
+        {
+            "story_type": "chat",
+            "genre": "crazy",
+            "fragments": [
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Leute, haltet euch fest! Mein Freund hat gestern bei einer Familienfeier verkündet, dass er seit einem Jahr ein OnlyFans-Account hat. 😱",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 1,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "WTF_Jenny",
+                    "speaker_text": "Moment mal, hat er das ernsthaft vor deiner Oma gesagt? Das ist next level peinlich! 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 2,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "SamuraiSam",
+                    "speaker_text": "Bitte sag mir, dass sie einen Herzinfarkt bekommen hat. Das ist Comedy-Gold! 💀",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 3,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Fast! Sie hat ihn mit ihrem Rollator verprügelt! 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 4,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "ConspiracyKev",
+                    "speaker_text": "Vielleicht war das alles nur ein Cover-up, um von seiner geheimen Alien-Entführung abzulenken. 🤔👽",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 5,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "WTF_Jenny",
+                    "speaker_text": "Kev, echt jetzt? Lass die Aliens aus dem Spiel. 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 6,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Wartet ab, es wird noch besser... Er hat einen neuen Follower gewonnen. Ratet wer? Mein EX! 🤯",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 7,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "SamuraiSam",
+                    "speaker_text": "Junge, das ist wie 'Gute Zeiten, schlechte Zeiten' nur viel kranker! 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 8,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "QueenBee",
+                    "speaker_text": "WTF, Queen! Hast du den Typen schon zur Rede gestellt? 🚩",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 9,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Ja, er meinte nur: 'Es ist besser, als heimlich zu Tinder-Dates zu gehen.' 🤦‍♀️",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 10,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "WTF_Jenny",
+                    "speaker_text": "Was? Das ist die merkwürdigste Logik, die ich je gehört habe! 😂😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 11,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "ConspiracyKev",
+                    "speaker_text": "Er hat bestimmt eine Gehirnwäsche von einer Geheimgesellschaft durchgemacht... 🙄",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 12,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "QueenBee",
+                    "speaker_text": "Das ist absolut krank! Hast du wenigstens Schluss gemacht?",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 13,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Denkst du, ich bin noch bei Verstand? Klaro hab ich Schluss gemacht! 🥂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 14,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "SamuraiSam",
+                    "speaker_text": "Zwei Toxics weniger auf deinem Radar. Cheers auf bessere Zeiten! 🍻",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 15,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "ConspiracyKev",
+                    "speaker_text": "Jetzt fehlt nur noch, dass dein Ex behauptet, er sei ein wiedergeborener Pharao oder sowas. 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 16,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Schlimmer - er behauptet jetzt, er sei ein Lifestyle-Influencer, der über Selbstliebe und Geld verdienen redet. 😒",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 17,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "WTF_Jenny",
+                    "speaker_text": "Wird immer besser! 🙈 Leute, ich kann nicht mehr! 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 18,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "SamuraiSam",
+                    "speaker_text": "Wusste gar nicht, dass man ein Doppelleben auch beruflich nutzen kann. 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 19,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "QueenBee",
+                    "speaker_text": "DramaQueen, du solltest das auf TikTok posten! Das wird viral gehen. #Exposé #MeinIrrerEx",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 20,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Gute Idee! Vielleicht werde ich damit die echte Influencerin, während er mit seinen Selbsthilfetipps bleibt. 😉",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 21,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "ConspiracyKev",
+                    "speaker_text": "Vorsicht, nächstes Kapitel: Dein Ex verklagt dich wegen Verleumdung. 😜",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 22,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "WTF_Jenny",
+                    "speaker_text": "Kev, jetzt mal echt! Lass den Quatsch! 😂 DramaQueen, bist du ernsthaft am Überlegen?",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 23,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Warum nicht? Er hat mein Leben genug durcheinander gebracht. Zeit für ein bisschen Rache. #ProRevenge 🌪️",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 24,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "QueenBee",
+                    "speaker_text": "High five, Girl! Stell dir nur die Gesichter deiner Follower vor. 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 25,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "SamuraiSam",
+                    "speaker_text": "Ich unterstütze das voll! #ExposeDerToxischenEx 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 26,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "ConspiracyKev",
+                    "speaker_text": "Dann mal los, DramaQueen. Zeit, diese Sache viral zu machen! 🌍",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 27,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "DramaQueen",
+                    "speaker_text": "Watch out, TikTok. Hier kommt die ultimative Enthüllung! 💥",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 28,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "WTF_Jenny",
+                    "speaker_text": "Ich hol schonmal Popcorn! 🍿",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 29,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "default",
+                    "user_name": "QueenBee",
+                    "speaker_text": "Lasst das Drama beginnen! 😂",
+                    "audio_duration_in_frames": 0.0,
+                    "speaker_order": 30,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                }
+            ]
+        },
+        {
+            "story_type": "chat",
+            "genre": "crazy",
+            "fragments": [
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Alright guys, here’s a wild one. Am I the villain for telling my brother’s fiancée that her engagement ring was originally my ex's??",
+                    "audio_duration_in_frames": 232.0,
+                    "speaker_order": 1,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "DramaLama",
+                    "speaker_text": "Whoa, seriously? What happened next? Did she freak out?",
+                    "audio_duration_in_frames": 124.0,
+                    "speaker_order": 2,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "LOLzRUs",
+                    "speaker_text": "No way this ends well. Spill everything, SnazzyCat!",
+                    "audio_duration_in_frames": 124.0,
+                    "speaker_order": 3,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "So, my brother thought he’d save a buck by reusing my ex’s ring. I knew it looked familiar and I just couldn't hold it in. Seems like he pulled a fast one on everyone.",
+                    "audio_duration_in_frames": 319.0,
+                    "speaker_order": 4,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "bIHbv24MWmeRgasZH58o",
+                    "user_name": "GhostDog",
+                    "speaker_text": "That’s insane. Did he seriously think no one would notice? What was her reaction?",
+                    "audio_duration_in_frames": 156.0,
+                    "speaker_order": 5,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "I’m grabbing my popcorn. This is gonna get GOOD.",
+                    "audio_duration_in_frames": 122.0,
+                    "speaker_order": 6,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Well, before I could even finish my sentence, she went silent. Then she started crying and yelling at my brother, who looked like a deer in headlights!",
+                    "audio_duration_in_frames": 250.0,
+                    "speaker_order": 7,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "DramaLama",
+                    "speaker_text": "The drama! What did he do to calm her down? Or did he mess up even more?",
+                    "audio_duration_in_frames": 167.0,
+                    "speaker_order": 8,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "He just kept stammering, 'It's just a ring!' That made her angrier. And then—get this—my ex walked in.",
+                    "audio_duration_in_frames": 201.0,
+                    "speaker_order": 9,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "bIHbv24MWmeRgasZH58o",
+                    "user_name": "GhostDog",
+                    "speaker_text": "Wait, what?! Your ex was there too?",
+                    "audio_duration_in_frames": 83.0,
+                    "speaker_order": 10,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "This is like an episode of a soap opera! What did your ex do??",
+                    "audio_duration_in_frames": 140.0,
+                    "speaker_order": 11,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "My ex had no idea what was happening but started laughing hysterically as soon as he figured it out. Apparently, my brother didn’t even change the inscription inside the ring!",
+                    "audio_duration_in_frames": 356.0,
+                    "speaker_order": 12,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "DramaLama",
+                    "speaker_text": "I'm dying! Are you serious? His fiancée must’ve lost it entirely!",
+                    "audio_duration_in_frames": 145.0,
+                    "speaker_order": 13,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "LOLzRUs",
+                    "speaker_text": "I can’t even! Your brother really didn’t think this through. How's everyone doing now?",
+                    "audio_duration_in_frames": 197.0,
+                    "speaker_order": 14,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "She stormed out, my ex left still chuckling, and now my brother won’t speak to me. He’s blaming me for ruining everything, but I think it’s a bullet dodged for her!",
+                    "audio_duration_in_frames": 316.0,
+                    "speaker_order": 15,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "bIHbv24MWmeRgasZH58o",
+                    "user_name": "GhostDog",
+                    "speaker_text": "Your brother's logic was way off. Who gives an ex's ring to a new fiancée? It’s a recipe for disaster!",
+                    "audio_duration_in_frames": 208.0,
+                    "speaker_order": 16,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "This is gonna be the talk of TikTok. People love relationship fails like this!",
+                    "audio_duration_in_frames": 156.0,
+                    "speaker_order": 17,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "DramaLama",
+                    "speaker_text": "So, what do you guys think, listeners? Is SnazzyCat the bad guy here, or did she just save someone from a lifetime of bad decisions?",
+                    "audio_duration_in_frames": 276.0,
+                    "speaker_order": 18,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Keep it real, folks! I need your thoughts. Did I ruin a wedding, or did I save her from marrying an idiot??",
+                    "audio_duration_in_frames": 203.0,
+                    "speaker_order": 19,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "LOLzRUs",
+                    "speaker_text": "Honestly, you probably did her a favour. But the way it went down is pure internet gold.",
+                    "audio_duration_in_frames": 211.0,
+                    "speaker_order": 20,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "bIHbv24MWmeRgasZH58o",
+                    "user_name": "GhostDog",
+                    "speaker_text": "Guaranteed to go viral. People love messy stories they can gossip about!",
+                    "audio_duration_in_frames": 172.0,
+                    "speaker_order": 21,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "Tagging @DramaLama so they can capture this. Who’s starting the hashtag #EngagementRingFail?",
+                    "audio_duration_in_frames": 197.0,
+                    "speaker_order": 22,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "DramaLama",
+                    "speaker_text": "On it! Let’s get this trending. #EngagementRingFail #DramaQueen",
+                    "audio_duration_in_frames": 149.0,
+                    "speaker_order": 23,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "I can't believe this is actually happening. I guess sometimes truth really is stranger than fiction.",
+                    "audio_duration_in_frames": 197.0,
+                    "speaker_order": 24,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "bIHbv24MWmeRgasZH58o",
+                    "user_name": "GhostDog",
+                    "speaker_text": "This needs a follow-up. We need to know what happens next! Keep us updated, SnazzyCat.",
+                    "audio_duration_in_frames": 197.0,
+                    "speaker_order": 25,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "LOLzRUs",
+                    "speaker_text": "Moral of the story: Never underestimate how small the world is, especially when it comes to recycled engagement rings!",
+                    "audio_duration_in_frames": 242.0,
+                    "speaker_order": 26,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "This is why I stick to pets instead of people. Less drama, more cuddles.",
+                    "audio_duration_in_frames": 161.0,
+                    "speaker_order": 27,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "EXAVITQu4vr4xnSDxMaL",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Noted! I’ll keep you all updated. This might just be the start of a much bigger story.",
+                    "audio_duration_in_frames": 179.0,
+                    "speaker_order": 28,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                }
+            ]
+        },
+        {
+            "story_type": "chat",
+            "genre": "crazy",
+            "fragments": [
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Okay, I need to know if I'm the jerk here. My best friend just told me she’s in love with my boyfriend, and I laughed in her face…",
+                    "audio_duration_in_frames": 257.0,
+                    "speaker_order": 1,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "DramaLama",
+                    "speaker_text": "Oh no, that’s gonna get messy. What did she say after that?",
+                    "audio_duration_in_frames": 130.0,
+                    "speaker_order": 2,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "iP95p4xoKVk53GoZ742B",
+                    "user_name": "GhostDog",
+                    "speaker_text": "Hold up! Did she say it seriously or was she joking?",
+                    "audio_duration_in_frames": 105.0,
+                    "speaker_order": 3,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Seriously. She said she's had feelings for him for months, and she thought I'd understand.",
+                    "audio_duration_in_frames": 174.0,
+                    "speaker_order": 4,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "OMG. Did you at least confront your boyfriend? This sounds like a Netflix show!",
+                    "audio_duration_in_frames": 149.0,
+                    "speaker_order": 5,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "iP95p4xoKVk53GoZ742B",
+                    "user_name": "GhostDog",
+                    "speaker_text": "For real! And what’s his reaction in all of this?",
+                    "audio_duration_in_frames": 106.0,
+                    "speaker_order": 6,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "He was shocked. Said he had no clue. But here's the twist: I found texts where SHE initiated stuff!",
+                    "audio_duration_in_frames": 217.0,
+                    "speaker_order": 7,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "bIHbv24MWmeRgasZH58o",
+                    "user_name": "LOLzRUs",
+                    "speaker_text": "Whoa, whoa, whoa. Are you sure he didn’t reciprocate at all?",
+                    "audio_duration_in_frames": 140.0,
+                    "speaker_order": 8,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "He didn’t. Even told her he loved me.",
+                    "audio_duration_in_frames": 94.0,
+                    "speaker_order": 9,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "DramaLama",
+                    "speaker_text": "Girl, are you still friends with her?",
+                    "audio_duration_in_frames": 86.0,
+                    "speaker_order": 10,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "If you are, how? I'd have blocked her on everything!",
+                    "audio_duration_in_frames": 109.0,
+                    "speaker_order": 11,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "I thought about it... But, plot twist, she’s my roommate.",
+                    "audio_duration_in_frames": 123.0,
+                    "speaker_order": 12,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "iP95p4xoKVk53GoZ742B",
+                    "user_name": "GhostDog",
+                    "speaker_text": "Oh snap. That’s some next-level soap opera stuff right there.",
+                    "audio_duration_in_frames": 124.0,
+                    "speaker_order": 13,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "DramaLama",
+                    "speaker_text": "😱 How do you even deal with that?",
+                    "audio_duration_in_frames": 74.0,
+                    "speaker_order": 14,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "bIHbv24MWmeRgasZH58o",
+                    "user_name": "LOLzRUs",
+                    "speaker_text": "Okay, I have to ask everyone – what would you do if you were in SnazzyCat's shoes?",
+                    "audio_duration_in_frames": 153.0,
+                    "speaker_order": 15,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "Oof. Tough call. I’d move out ASAP and never look back.",
+                    "audio_duration_in_frames": 149.0,
+                    "speaker_order": 16,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "iP95p4xoKVk53GoZ742B",
+                    "user_name": "GhostDog",
+                    "speaker_text": "I'd stay, but make her life a living nightmare.",
+                    "audio_duration_in_frames": 101.0,
+                    "speaker_order": 17,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "DramaLama",
+                    "speaker_text": "Petty revenge, perhaps? Swap her shampoo with hair dye?",
+                    "audio_duration_in_frames": 133.0,
+                    "speaker_order": 18,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Y'all are hilarious. Actually, I’m planning a little surprise of my own…",
+                    "audio_duration_in_frames": 158.0,
+                    "speaker_order": 19,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "TeaSpillz",
+                    "speaker_text": "Do tell! We need every juicy detail.",
+                    "audio_duration_in_frames": 105.0,
+                    "speaker_order": 20,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Let’s just say, revenge is best served cold. And comes in the form of a glitter bomb.",
+                    "audio_duration_in_frames": 178.0,
+                    "speaker_order": 21,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "iP95p4xoKVk53GoZ742B",
+                    "user_name": "GhostDog",
+                    "speaker_text": "Yessss. Glitter is forever.",
+                    "audio_duration_in_frames": 88.0,
+                    "speaker_order": 22,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "DramaLama",
+                    "speaker_text": "Epic. Make sure to record it. This has TikTok written all over it.",
+                    "audio_duration_in_frames": 153.0,
+                    "speaker_order": 23,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                },
+                {
+                    "voice_name": "bIHbv24MWmeRgasZH58o",
+                    "user_name": "LOLzRUs",
+                    "speaker_text": "I am LIVING for this drama. Please update us!",
+                    "audio_duration_in_frames": 106.0,
+                    "speaker_order": 24,
+                    "speaker_type": "sub_text",
+                    "gender": "male"
+                },
+                {
+                    "voice_name": "XrExE9yKIg1WjnnlVkGX",
+                    "user_name": "SnazzyCat",
+                    "speaker_text": "Oh, you bet I will. Stay tuned, folks. This isn’t over yet!",
+                    "audio_duration_in_frames": 144.0,
+                    "speaker_order": 25,
+                    "speaker_type": "sub_text",
+                    "gender": "female"
+                }
+            ]
+        }
+    ]
+}

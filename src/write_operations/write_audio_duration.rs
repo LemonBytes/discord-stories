@@ -21,7 +21,8 @@ pub fn write_duration(story_path: &str, audio_path: &str) {
 
     for speaker in &mut story.fragments {
         let mut file_content =
-            File::open(audio_path.to_owned() + &speaker.hashed_text + ".mp3").unwrap();
+            File::open(audio_path.to_owned() + &speaker.speaker_order.to_string() + ".mp3")
+                .unwrap();
 
         let mp3_file = MpegFile::read_from(&mut file_content, ParseOptions::new()).unwrap();
         let frames = mp3_file.properties().duration().as_secs_f32() * FRAME_RATE + BUFFER_FRAMES;

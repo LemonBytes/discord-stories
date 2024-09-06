@@ -1,4 +1,6 @@
-use crate::{adapters::audio::generate_audio::generate_audio, entities::entities::Language};
+use crate::{
+    adapters::audio::generate_audio::generate_audio_eleven_labs, entities::entities::Language,
+};
 use reqwest::Client;
 
 pub async fn handle_generate_audio(client: Client, language: Language) {
@@ -6,7 +8,7 @@ pub async fn handle_generate_audio(client: Client, language: Language) {
     const MAX_ATTEMPTS: u32 = 3;
 
     while attempts < MAX_ATTEMPTS {
-        match generate_audio(client.clone(), language.clone()).await {
+        match generate_audio_eleven_labs(client.clone(), language.clone()).await {
             Ok(_) => {
                 // Success, break out of the loop and continue with the rest of the program.
                 println!("Audio generation succeeded.");

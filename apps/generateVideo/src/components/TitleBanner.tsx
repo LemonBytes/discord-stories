@@ -8,18 +8,18 @@ import {
 	staticFile,
 	useCurrentFrame,
 } from 'remotion';
+import {generateRandomDateForMessage} from './Channel/Server';
 
 export const TitleBanner: React.FC<IBanner> = ({
 	delay,
 	text,
 	userName,
 	duruation,
+	gender,
 }) => {
 	const frame = useCurrentFrame();
 
-	const defaultAvatars: string[] = ['blue', 'red', 'yellow', 'green', 'grey'];
-
-	const randomNumber = Math.floor(random(text) * 5);
+	const randomNumber = Math.floor(random(userName + random(userName) * 4) * 14);
 
 	const opacity = interpolate(
 		frame,
@@ -41,16 +41,17 @@ export const TitleBanner: React.FC<IBanner> = ({
 				justifySelf: 'center',
 				overflowWrap: 'break-word',
 				borderRadius: '10px',
+				padding: '10px 15px 20px 15px',
 			}}
 		>
 			<section className="px-3 py-5">
 				<Img
 					src={staticFile(
-						`/assets/images/discord_default/discord_${defaultAvatars[randomNumber]}.png`,
+						`/assets/images/${gender}/${gender}_${randomNumber}.webp`,
 					)}
 					style={{
 						width: '150px',
-						height: 'auto',
+						height: '150px',
 						maxWidth: '150px',
 						position: 'relative',
 					}}
@@ -63,10 +64,10 @@ export const TitleBanner: React.FC<IBanner> = ({
 						{userName}
 					</p>
 					<p className="text-center font-semibold text-[1.5rem] text-gray-300 pt-5 font-sans max-w-[40%] ">
-						Today at 7:05 PM
+						{generateRandomDateForMessage()}
 					</p>
 				</div>
-				<p className=" h-auto text-[2.6rem] text-gray-200 font-semibold min-w-[95%] max-w-[90%] pl-3">
+				<p className=" h-auto text-[2.6rem] text-gray-200 font-medium min-w-[95%] max-w-[90%] pl-3">
 					{text}
 				</p>
 			</section>
